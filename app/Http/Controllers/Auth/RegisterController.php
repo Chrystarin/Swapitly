@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'gender' => 'required|string|max:255',
             'mobile_number' => 'required|string|max:255',
             'address' => 'required|string|max:255',
+            'description' => 'string',
         ]);
     }
 
@@ -78,6 +79,7 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'mobile_number' => $data['mobile_number'],
             'address' => $data['address'],
+            'description' => $data['description'],
         ]);
     }
 }

@@ -7,12 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">My Profile</div>
                     <div class="panel-body">
-                        <h2>First Name</h1>
-                        <h4>Username </h4>
+                        <h2>{{ Auth::user()->first_name }} </h1>
+                        <h4>{{ Auth::user()->username }}  </h4>
                         <hr>
                         <h4>Description</h4>
-                        <h5>Insert Description Here</h5>
-                        
+                        <h5>{{ Auth::user()->description }}</h5>
                     </div>
                 </div>
             </div>
