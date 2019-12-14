@@ -36,6 +36,23 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
+                    {{-- Search Bar --}}
+                    <div class="nav navbar-nav">
+                        <form class="form-inline mr-auto">
+                            <select id="category" name="category" class="form-control mr-sm-2">  
+                                <option value = "All">All</option>
+                                <option value = "Fashion">Fashion</option>
+                                <option value = "Entertainment">Entertainment</option>
+                                <option value = "Appliances">Appliances</option>
+                                <option value = "Hobbies">Hobbies</option>
+                            </select>
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>
+                          </form>
+                    </div>
+
+
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
