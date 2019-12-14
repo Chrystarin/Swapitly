@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profile', 'PagesController@profile');
+Route::get('/wishlist', 'PagesController@wishlist');
+Route::get('/mytrades', 'PagesController@mytrades');
+Route::get('/settings', 'PagesController@settings');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
