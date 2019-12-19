@@ -22,4 +22,10 @@ Route::get('/settings', 'PagesController@settings');
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+
+Route::resource('profile', 'ProfilesController');
+
+// Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+// Route::get('profile/{user}',  ['as' => 'profile.edit', 'uses' => 'UserController@edit']);
+// Route::patch('profile/{user}/update',  ['as' => 'profile.update', 'uses' => 'UserController@update']);

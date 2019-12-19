@@ -11,7 +11,7 @@
                         <h4>{{ Auth::user()->username }}  </h4>
                         <hr>
                         <h4>Description</h4>
-                        <a href="/profile/{{Auth::user()->id}}/edit" class="btn btn-default">Edit</a>
+                        <a href="" class="btn btn-default">Edit</a>
                         <h5>{{ Auth::user()->description }}</h5>
                     </div>
                 </div>

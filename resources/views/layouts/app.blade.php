@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('sass/app.scss') }}" rel="stylesheet">
     
 </head>
@@ -35,28 +36,31 @@
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
-                    {{-- Search Bar --}}
-                    <div class="nav navbar-nav">
-                        <form class="form-inline mr-auto">
-                            <select id="category" name="category" class="form-control mr-sm-2">  
-                                <option value = "All">All</option>
-                                <option value = "Fashion">Fashion</option>
-                                <option value = "Entertainment">Entertainment</option>
-                                <option value = "Appliances">Appliances</option>
-                                <option value = "Hobbies">Hobbies</option>
-                            </select>
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>
-                          </form>
-                    </div>
-
+                <div class="navbar-collapse collapse" id="app-navbar-collapse">
 
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
+
+                    {{-- Search Bar --}}
+                        <div class="col-lg-8">
+                         <div class="input-group input-group-lg">
+                            <span class="input-group-btn">
+                                <select id="category" name="category" class="btn btn-default btn-lg">  
+                                    <option value = "All">All</option>
+                                    <option value = "Fashion">Fashion</option>
+                                    <option value = "Entertainment">Entertainment</option>
+                                    <option value = "Appliances">Appliances</option>
+                                    <option value = "Hobbies">Hobbies</option>
+                                </select>
+                              </span>
+                           <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users">
+                           <span class="input-group-btn">
+                             <button class="btn btn-default btn-lg" type="submit">Search</button>
+                           </span>
+                         </div>
+                       </div>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -72,12 +76,7 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ route('dashboard') }}">
-                                            Dashboard
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="\profile">
+                                        <a href="/profile/{{Auth::user()->id}}">
                                             Profile
                                         </a>
                                     </li>

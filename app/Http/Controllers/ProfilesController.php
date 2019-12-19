@@ -1,12 +1,71 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Post;
+use App\User;
+use App\Auth;
 
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('profile.edit')->with('profile', $user);
+    }
+
+
+    public function update(Request $request, $id)
+    { 
+        $this->validate($request, [
+            
+            // 'email' => 'required|string|email|max:255|unique:users',
+            // 'password' => 'required|string|min:6|confirmed',
+            // 'username' => 'required|string|max:255|unique:users',
+            // 'first_name' => 'required|string|max:255',
+            // 'last_name' => 'required|string|max:255',
+            // 'birthday' => 'required|string|max:255',
+            // 'gender' => 'required|string|max:255',
+            // 'mobile_number' => 'required|string|max:255',
+            // 'address' => 'required|string|max:255',
+            // 'description' => 'string',
+
+            // 'email' => 'string',
+            // 'password' => 'string',
+            // 'username' => 'string',
+            // 'first_name' => 'string',
+            // 'last_name' => 'string',
+            // 'birthday' => 'string',
+            // 'gender' => 'string',
+            // 'mobile_number' => 'string',
+            // 'address' => 'string',
+            // 'description' => 'string',
+            
+        ]);
+
+        $user = User::find($id);
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->username = $request->input('username');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->birthday = $request->input('birthday');
+        $user->gender = $request->input('gender');
+        $user->mobile_number = $request->input('mobile_number');
+        $user->address = $request->input('address');
+        $user->description = $request->input('description');
+        $user->save();
+
+        return redirect('/profile/{{Auth::user()->id}}');
+        // return view('profile.show')->with('profile', $user);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +73,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile');
     }
 
     /**
@@ -46,30 +105,9 @@ class ProfilesController extends Controller
      */
     public function show($id)
     {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $user = User::find($id);
+        // $user = User::find($id);
+        return view('profile.show')->with('profile', $user);
     }
 
     /**
@@ -82,4 +120,6 @@ class ProfilesController extends Controller
     {
         //
     }
+
+    
 }
