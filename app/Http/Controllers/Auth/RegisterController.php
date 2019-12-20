@@ -69,10 +69,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        // $profileFileNameToStore = 'noimage.jpg';
-        // $coverFileNameToStore = 'noimage.jpg';
-
         return User::create([
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -83,10 +79,8 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'mobile_number' => $data['mobile_number'],
             'address' => $data['address'],
-            'description' => $data['description'],
-
-            // 'profile_image' => $profileFileNameToStore,
-            // 'cover_image' => $coverFileNameToStore
+            'description' => $data['description']
         ]);
+
     }
 }

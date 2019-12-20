@@ -25,9 +25,6 @@ class ProfilesController extends Controller
     { 
         $this->validate($request, [
             
-            'email' => 'required|string|email|max:255',
-            // 'password' => 'required|string|min:6|confirmed',
-            // 'username' => 'required|string|max:255|unique:users',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'birthday' => 'required|string|max:255',
@@ -35,14 +32,41 @@ class ProfilesController extends Controller
             'mobile_number' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-
+            'profile_image' => 'image|nullable',
+            'cover_image' => 'image|nullable'
             
         ]);
 
+        //Handle File Upload for Profile Image
+        if($request->hasFile('profile_image')){
+            //Get filename with the extension
+            $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('profile_image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStoreProfile = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('profile_image')->storeAs('public/profile_images', $fileNameToStoreProfile);
+        } 
+
+        //Handle File Upload for Cover Image
+        if($request->hasFile('cover_image')){
+            //Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStoreCover = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStoreCover);
+        } 
+        
+
         $user = User::find($id);
-        $user->email = $request->input('email');
-        // $user->password = $request->input('password');
-        // $user->username = $request->input('username');
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->birthday = $request->input('birthday');
@@ -50,6 +74,12 @@ class ProfilesController extends Controller
         $user->mobile_number = $request->input('mobile_number');
         $user->address = $request->input('address');
         $user->description = $request->input('description');
+        if($request->hasFile('profile_image')){
+            $user->profile_image = $fileNameToStoreProfile;
+        }
+        if($request->hasFile('cover_image')){
+            $user->cover_image = $fileNameToStoreCover;
+        }
         $user->save();
 
         return redirect('/profile/{{Auth::user()->id}}');

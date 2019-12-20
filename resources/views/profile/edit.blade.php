@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         {!! Form::open(['action' => ['ProfilesController@update', Auth::user()->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             {{Form::label('profile_image', 'Profile Image')}}
                             {{Form::file('profile_image')}}
                         </div>
@@ -17,17 +17,7 @@
                         <div class="form-group">
                             {{Form::label('cover_image', 'Cover Image')}}
                             {{Form::file('cover_image')}}
-                        </div> --}}
-
-                        <div class="form-group">
-                            {{Form::label('email', 'Email')}}
-                            {{Form::text('email', Auth::user()->email, ['class' => 'form-control', 'placeholder' => 'Email'])}}
                         </div>
-{{-- 
-                        <div class="form-group">
-                            {{Form::label('password', 'password')}}
-                            {{Form::text('password', Auth::user()->password, ['class' => 'form-control', 'placeholder' => 'password'])}}
-                        </div> --}}
 
                         <div class="form-group">
                             {{Form::label('first_name', 'First Name')}}
@@ -68,8 +58,6 @@
                             {{Form::label('description', 'Description')}}
                             {{Form::textarea('description', Auth::user()->description, ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Enter text'])}}
                         </div>
-
-                        
 
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}

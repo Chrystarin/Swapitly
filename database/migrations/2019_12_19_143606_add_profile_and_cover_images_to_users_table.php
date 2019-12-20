@@ -14,8 +14,8 @@ class AddProfileAndCoverImagesToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function($table){
-            $table->string('profile_image')->nullable();
-            $table->string('cover_image')->nullable();
+            $table->string('profile_image')->nullable()->default('default_profile.jpg');
+            $table->string('cover_image')->nullable()->default('default_cover.jpg');
         });
     }
 
