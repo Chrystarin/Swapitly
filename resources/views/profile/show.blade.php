@@ -7,10 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">My Profile</div>
                     <div class="panel-body">
-                        
                         <img style="width:100%;height:30vh;"src="/storage/cover_images/{{$users->cover_image}}" class="img-responsive"><br>
                         <img style="width:25%"src="/storage/profile_images/{{$users->profile_image}}" class="img-circle col-md-2"><br>
-                        
                         <h2>{{ $users->first_name }} </h1>
                         <h4>{{ $users->username }}  </h4>
                         @if(!Auth::guest())

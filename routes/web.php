@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/new_trade', function () {
-    return view('trades.create');
-});
-
 Route::get('/', 'PagesController@index');
 Route::get('/profile', 'PagesController@profile');
 Route::get('/wishlist', 'PagesController@wishlist');
@@ -28,7 +20,9 @@ Route::get('/settings', 'PagesController@settings');
 
 Auth::routes();
 
-
-
 Route::resource('profile', 'ProfilesController');
 Route::resource('ratings', 'RatingsController');
+
+Route::get('/new_trade', function () {
+    return view('trades.create');
+});

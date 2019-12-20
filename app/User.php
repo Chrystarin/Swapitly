@@ -35,7 +35,4 @@ class User extends Authenticatable
     // Timestamps
     public $timestamps= true;
 
-    // public function user(){
-    //         return $this->belongsTo('App\User');
-    // }
 }
