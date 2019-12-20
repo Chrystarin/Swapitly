@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    
     use Notifiable;
 
     /**
@@ -27,4 +28,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //Table Name
+    protected $table = 'users';
+    //Primary Key
+    public $primaryKey = 'id';
+    // Timestamps
+    public $timestamps= true;
+
+    // public function user(){
+    //         return $this->belongsTo('App\User');
+    // }
 }

@@ -125,7 +125,7 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('profile.show')->with('profile', $user);
+        return view('profile.show')->with('users', $user);
     }
 
     /**

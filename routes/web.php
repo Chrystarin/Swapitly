@@ -31,3 +31,4 @@ Auth::routes();
 
 
 Route::resource('profile', 'ProfilesController');
+Route::resource('ratings', 'RatingsController');
