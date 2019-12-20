@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'gender' => 'required|string|max:255',
             'mobile_number' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'description' => 'string',
+            'description' => 'string|max:255'
         ]);
     }
 
@@ -69,6 +69,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        // $profileFileNameToStore = 'noimage.jpg';
+        // $coverFileNameToStore = 'noimage.jpg';
+
         return User::create([
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -80,6 +84,9 @@ class RegisterController extends Controller
             'mobile_number' => $data['mobile_number'],
             'address' => $data['address'],
             'description' => $data['description'],
+
+            // 'profile_image' => $profileFileNameToStore,
+            // 'cover_image' => $coverFileNameToStore
         ]);
     }
 }

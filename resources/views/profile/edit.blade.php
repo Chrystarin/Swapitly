@@ -23,11 +23,11 @@
                             {{Form::label('email', 'Email')}}
                             {{Form::text('email', Auth::user()->email, ['class' => 'form-control', 'placeholder' => 'Email'])}}
                         </div>
-
+{{-- 
                         <div class="form-group">
                             {{Form::label('password', 'password')}}
                             {{Form::text('password', Auth::user()->password, ['class' => 'form-control', 'placeholder' => 'password'])}}
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             {{Form::label('first_name', 'First Name')}}

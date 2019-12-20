@@ -25,34 +25,24 @@ class ProfilesController extends Controller
     { 
         $this->validate($request, [
             
-            // 'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             // 'password' => 'required|string|min:6|confirmed',
             // 'username' => 'required|string|max:255|unique:users',
-            // 'first_name' => 'required|string|max:255',
-            // 'last_name' => 'required|string|max:255',
-            // 'birthday' => 'required|string|max:255',
-            // 'gender' => 'required|string|max:255',
-            // 'mobile_number' => 'required|string|max:255',
-            // 'address' => 'required|string|max:255',
-            // 'description' => 'string',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'birthday' => 'required|string|max:255',
+            'gender' => 'required|string|max:255',
+            'mobile_number' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
 
-            // 'email' => 'string',
-            // 'password' => 'string',
-            // 'username' => 'string',
-            // 'first_name' => 'string',
-            // 'last_name' => 'string',
-            // 'birthday' => 'string',
-            // 'gender' => 'string',
-            // 'mobile_number' => 'string',
-            // 'address' => 'string',
-            // 'description' => 'string',
             
         ]);
 
         $user = User::find($id);
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->username = $request->input('username');
+        // $user->password = $request->input('password');
+        // $user->username = $request->input('username');
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->birthday = $request->input('birthday');
