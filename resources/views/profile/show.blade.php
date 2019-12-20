@@ -13,7 +13,11 @@
                         
                         <h2>{{ $users->first_name }} </h1>
                         <h4>{{ $users->username }}  </h4>
-                        <a href="/profile/{{Auth::user()->id}}/edit" class="btn btn-default">Edit</a>
+                        @if(!Auth::guest())
+                            @if(Auth::user()->id==$users->id)
+                                <a href="/profile/{{Auth::user()->id}}/edit" class="btn btn-default">Edit</a>
+                            @endif
+                        @endif
                         <hr>
                         <h4>Description</h4>
                         <h5>{{ $users->description }}</h5>
@@ -26,7 +30,11 @@
                         <h4>My Trades</h4>
                         <hr>
                         <h4>Ratings & Reviews</h4>
-                        <a href="\ratings\create" class="btn btn-default btn-lg">Rate Me</a></li>
+                        @if(!Auth::guest())
+                            @if(Auth::user()->id!==$users->id)
+                                <a href="\ratings\create" class="btn btn-default btn-lg">Rate Me</a></li>
+                            @endif
+                        @endif
                     </div>
                 </div>
             </div>
