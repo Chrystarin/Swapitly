@@ -63,7 +63,6 @@ class ProfilesController extends Controller
         $user->save();
 
         return redirect('/profile/{{Auth::user()->id}}');
-        // return view('profile.show')->with('profile', $user);
     }
 
     /**
@@ -106,7 +105,6 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        // $user = User::find($id);
         return view('profile.show')->with('profile', $user);
     }
 

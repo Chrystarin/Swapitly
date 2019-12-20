@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
 
+    public function index(){
+        return view('pages.index');
+    }
     public function profile(){
         return view('pages.profile');
     }
@@ -22,19 +25,4 @@ class PagesController extends Controller
     public function settings(){
         return view('pages.settings');
     }
-
-    // Sample Functions for Reference
-    // public function index(){
-    //     $title = 'Home';
-    //     //return view('pages.index', compact('title'));
-    //     return view('pages.index')->with('title', $title);
-    // }
-    // public function services(){
-    //     $title = 'Services';
-    //     $data = array(
-    //         'title' => 'Services',
-    //         'services' => ['Web Design', "Programming", 'SEO']
-    //     );
-    //     return view('pages.services')->with($data);
-    // }
 }
