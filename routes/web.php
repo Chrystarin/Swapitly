@@ -11,6 +11,9 @@
 |
 */
 
+use App\User;
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', 'PagesController@index');
 Route::get('/profile', 'PagesController@profile');
 Route::get('/wishlist', 'PagesController@wishlist');
@@ -25,4 +28,33 @@ Route::resource('ratings', 'RatingsController');
 
 Route::get('/new_trade', function () {
     return view('trades.create');
+});
+
+Route::any('/search',function(){
+    $category = Input::get('category');
+    $search = Input::get('search');
+
+    if($category === "All"){
+        $user = User::where('first_name','LIKE','%'.$search.'%')->orWhere('last_name','LIKE','%'.$search.'%')->orWhere('username','LIKE','%'.$search.'%')->orWhere('email','LIKE','%'.$search.'%')->get();
+        if(count($user) > 0){
+            return view('pages.search')->withDetails($user)->withQuery ( $search );
+        }
+        else {
+            return view ('pages.search')->withMessage('No '.$search.' found!');
+        }
+    }
+    elseif($category === "Traders"){
+        $user = User::where('first_name','LIKE','%'.$search.'%')->orWhere('last_name','LIKE','%'.$search.'%')->orWhere('username','LIKE','%'.$search.'%')->orWhere('email','LIKE','%'.$search.'%')->get();
+        if(count($user) > 0){
+            return view('pages.search')->withDetails($user)->withQuery ( $search );
+        }
+        else {
+            return view ('pages.search')->withMessage('No '.$search.' found!');
+        }
+    }
+    else{
+        return view ('pages.search')->withMessage('No '.$search.' found!');
+    }
+
+
 });

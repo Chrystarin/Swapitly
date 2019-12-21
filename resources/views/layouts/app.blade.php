@@ -45,21 +45,27 @@
 
                     {{-- Search Bar --}}
                         <div class="col-lg-7">
-                         <div class="input-group input-group-lg">
-                            <span class="input-group-btn">
-                                <select id="category" name="category" class="btn btn-default btn-lg">  
-                                    <option value = "All">All</option>
-                                    <option value = "Fashion">Fashion</option>
-                                    <option value = "Entertainment">Entertainment</option>
-                                    <option value = "Appliances">Appliances</option>
-                                    <option value = "Hobbies">Hobbies</option>
-                                </select>
-                              </span>
-                           <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users">
-                           <span class="input-group-btn">
-                             <button class="btn btn-default btn-lg" type="submit">Search</button>
-                           </span>
-                         </div>
+                            {{-- {!! Form::open(['action' => '/search', 'method' => 'POST', 'role' => 'search', 'class' => 'input-group input-group-lg']) !!} --}}
+                            <form action="/search" method="POST" role="search" class="input-group input-group-lg">
+                                {{ csrf_field() }}
+                                <span class="input-group-btn">
+                                    <select id="category" name="category" class="btn btn-default btn-lg">  
+                                        <option value = "All">All</option>
+                                        <option value = "Traders">Traders</option>
+                                        <option value = "Fashion">Fashion</option>
+                                        <option value = "Entertainment">Entertainment</option>
+                                        <option value = "Appliances">Appliances</option>
+                                        <option value = "Hobbies">Hobbies</option>
+                                    </select>
+                                </span>
+                                <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users" name="search">
+                                <span class="input-group-btn">
+                                    {{Form::hidden('_method', 'PUT')}}
+                                    {{Form::submit('Submit', ['class' => 'btn btn-default btn-lg'])}}
+                                 {{-- <button class="btn btn-default btn-lg" type="submit">Search</button> --}}
+                               </span> 
+                            <form>
+                           {{-- {!! Form::close() !!}     --}}
                        </div>
 
                     <!-- Right Side Of Navbar -->

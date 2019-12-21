@@ -16,6 +16,11 @@
                                 <a href="/profile/{{Auth::user()->id}}/edit" class="btn btn-default">Edit</a>
                             @endif
                         @endif
+                        @if(!Auth::guest())
+                        @if(Auth::user()->id!==$users->id)
+                            <a href="\" class="btn btn-default btn-lg">Chat</a></li>
+                        @endif
+                        @endif
                         <hr>
                         <h4>Description</h4>
                         <h5>{{ $users->description }}</h5>
