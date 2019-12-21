@@ -45,8 +45,7 @@
 
                     {{-- Search Bar --}}
                         <div class="col-lg-7">
-                            {{-- {!! Form::open(['action' => '/search', 'method' => 'POST', 'role' => 'search', 'class' => 'input-group input-group-lg']) !!} --}}
-                            <form action="/search" method="POST" role="search" class="input-group input-group-lg">
+                                <form action="/search" method="POST" role="search" class="input-group input-group-lg">
                                 {{ csrf_field() }}
                                 <span class="input-group-btn">
                                     <select id="category" name="category" class="btn btn-default btn-lg">  
@@ -60,12 +59,9 @@
                                 </span>
                                 <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users" name="search">
                                 <span class="input-group-btn">
-                                    {{Form::hidden('_method', 'PUT')}}
-                                    {{Form::submit('Submit', ['class' => 'btn btn-default btn-lg'])}}
-                                 {{-- <button class="btn btn-default btn-lg" type="submit">Search</button> --}}
+                                 <button class="btn btn-default btn-lg" type="submit">Search</button>
                                </span> 
-                            <form>
-                           {{-- {!! Form::close() !!}     --}}
+                            </form>
                        </div>
 
                     <!-- Right Side Of Navbar -->
