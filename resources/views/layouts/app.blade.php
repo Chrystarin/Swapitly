@@ -44,22 +44,24 @@
                     </ul>
 
                     {{-- Search Bar --}}
-                        <div class="col-lg-8">
-                         <div class="input-group input-group-lg">
-                            <span class="input-group-btn">
-                                <select id="category" name="category" class="btn btn-default btn-lg">  
-                                    <option value = "All">All</option>
-                                    <option value = "Fashion">Fashion</option>
-                                    <option value = "Entertainment">Entertainment</option>
-                                    <option value = "Appliances">Appliances</option>
-                                    <option value = "Hobbies">Hobbies</option>
-                                </select>
-                              </span>
-                           <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users">
-                           <span class="input-group-btn">
-                             <button class="btn btn-default btn-lg" type="submit">Search</button>
-                           </span>
-                         </div>
+                        <div class="col-lg-7">
+                                <form action="/search" method="POST" role="search" class="input-group input-group-lg">
+                                {{ csrf_field() }}
+                                <span class="input-group-btn">
+                                    <select id="category" name="category" class="btn btn-default btn-lg">  
+                                        <option value = "All">All</option>
+                                        <option value = "Traders">Traders</option>
+                                        <option value = "Fashion">Fashion</option>
+                                        <option value = "Entertainment">Entertainment</option>
+                                        <option value = "Appliances">Appliances</option>
+                                        <option value = "Hobbies">Hobbies</option>
+                                    </select>
+                                </span>
+                                <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users" name="search">
+                                <span class="input-group-btn">
+                                 <button class="btn btn-default btn-lg" type="submit">Search</button>
+                               </span> 
+                            </form>
                        </div>
                        
                         <a href="/products" class="navbar-brand">Products    </a>
@@ -73,6 +75,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li><a href="/new_trade" class="btn btn-default btn-lg">New Trade</a></li>
+                            <li><img style="width:75px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle col-md-2"></li>
                             {{-- Dropdown Selection --}}
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

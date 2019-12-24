@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    
     use Notifiable;
 
     /**
@@ -27,8 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function products() {
-        return $this->hasMany('App\Product');
-    }
+    //Table Name
+    protected $table = 'users';
+    //Primary Key
+    public $primaryKey = 'id';
+    // Timestamps
+    public $timestamps= true;
 
 }
