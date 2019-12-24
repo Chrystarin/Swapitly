@@ -61,6 +61,8 @@
                            </span>
                          </div>
                        </div>
+                       
+                        <a href="/products" class="navbar-brand">Products    </a>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -88,8 +90,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="\mytrades">
-                                            My Trades
+                                        <a href="\products\user">
+                                            My Products
                                         </a>
                                     </li>
                                     <li>
