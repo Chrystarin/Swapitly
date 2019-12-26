@@ -12,6 +12,7 @@
 */
 
 use App\User;
+use App\Product;
 use Illuminate\Support\Facades\Input;
 
 Route::get('/', 'PagesController@index');
@@ -23,15 +24,17 @@ Route::get('/settings', 'PagesController@settings');
 
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
+Route::get('/products/create', 'ProductsController@create');
 
 Auth::routes();
 
 Route::resource('profile', 'ProfilesController');
 Route::resource('ratings', 'RatingsController');
+Route::resource('products', 'ProductsController');
 
-Route::get('/new_trade', function () {
-    return view('trades.create');
-});
+// Route::get('/new_trade', function () {
+//     return view('trades.create');
+// });
 
 Route::any('/search',function(){
     $category = Input::get('category');
@@ -46,7 +49,7 @@ Route::any('/search',function(){
             else {
                 return view ('pages.search')->withMessage('There are no results for '.$search.' found');
             }
-        break;
+            break;
         case "Traders":
             $user = User::where('first_name','LIKE','%'.$search.'%')->orWhere('last_name','LIKE','%'.$search.'%')->orWhere('username','LIKE','%'.$search.'%')->orWhere('email','LIKE','%'.$search.'%')->get();
             if(count($user) > 0){
@@ -55,13 +58,19 @@ Route::any('/search',function(){
             else {
                 return view ('pages.search')->withMessage('There are no results for '.$search.' found');
             }
-        break;
+            break;
+        case "Products":
+            $prod = Product::where('item_name','LIKE','%'.$search.'%')->get();
+            if(count($prod) > 0){
+                return view('pages.search')->withDetails($prod)->withQuery($search);
+            }
+            else {
+                return view ('pages.search')->withMessage('There are no results for '.$search.' found');
+            }
+            break;
         default:
             return view ('pages.search');
-        break;
+            break;
     }
-
-Route::resource('profile', 'ProfilesController');
-Route::resource('products', 'ProductsController');
 
 });

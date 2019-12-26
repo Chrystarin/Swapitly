@@ -18,7 +18,6 @@
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Username</th>
-                                    <th>Email</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -28,11 +27,26 @@
                                     <td>{{$user->first_name}}</td>
                                     <td>{{$user->last_name}}</td>
                                     <td>{{$user->username}}</td>
-                                    <td>{{$user->email}}</td>
                                     <td><a href="/profile/{{$user->id}}"  class="btn btn-default">Profile</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>
+
+
+
+                            {{-- <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($details as $prod)
+                                <tr>
+                                    <td><a href="/products/{{$prod->id}}"> {{$prod->item_name}} </a></td>
+                                </tr>
+                                @endforeach
+                            </tbody> --}}
                         </table>
                         @endif
                 </div>

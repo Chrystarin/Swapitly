@@ -4,7 +4,7 @@
 <div class="container">
     <div class='page-header'>
         @if (!Auth::guest())
-            @if (Auth::user()->id == $post->user_id)
+            @if (Auth::user()->id == $prod->user_id)
                 <div class='btn-toolbar pull-right'>
                     <a href="\products" class="btn btn-success">Go Back</a>
                     <a href="\products\{{$prod->id}}\edit" class='btn btn-primary'>Edit</a>&nbsp;
