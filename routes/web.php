@@ -21,6 +21,7 @@ Route::get('/mytrades', 'PagesController@mytrades');
 Route::get('/settings', 'PagesController@settings');
 Route::get('/settings', 'PagesController@settings');
 
+Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
 
 Auth::routes();
