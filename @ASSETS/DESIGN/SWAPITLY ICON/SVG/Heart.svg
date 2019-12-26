@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="641" height="597" viewBox="0 0 641 597">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Heart);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #e95252;
+      }
+    </style>
+    <clipPath id="clip-Heart">
+      <rect width="641" height="597"/>
+    </clipPath>
+  </defs>
+  <g id="Heart" class="cls-1">
+    <g id="Group_64" data-name="Group 64" transform="translate(-1537 -215)">
+      <g id="Group_63" data-name="Group 63" transform="translate(1575.756 509.61)">
+        <ellipse id="Ellipse_8" data-name="Ellipse 8" class="cls-2" cx="119" cy="120.5" rx="119" ry="120.5" transform="translate(0.244 0.39)"/>
+        <rect id="Rectangle_20" data-name="Rectangle 20" class="cls-3" width="30" height="150" rx="1" transform="translate(99.244 55.39)"/>
+        <rect id="Rectangle_21" data-name="Rectangle 21" class="cls-3" width="33.811" height="152.154" rx="1" transform="translate(37.728 147.461) rotate(-90)"/>
+      </g>
+      <path id="Subtraction_21" data-name="Subtraction 21" class="cls-3" d="M310.19,567.41a5.726,5.726,0,0,1-2.4-.483,5.538,5.538,0,0,1-2.381.467c-9.611,0-33.873-16.376-66.572-44.928A156.953,156.953,0,0,0,288.7,407.919c0-86.193-69.979-156.319-155.986-156.319a154.134,154.134,0,0,0-97.124,33.986C16.51,252.824,5.468,224.871,2.745,202.5c-4.24-34.863-3.567-66.145,2.008-92.977,5.5-26.435,15.751-48.567,30.467-65.777C58.692,16.309,92.832,1.618,136.7.076,138.11.024,139.584,0,141.058,0c78.3,0,142.67,73.132,166.708,104.575,10.572-13.812,32.7-40.363,61.863-63.022C405.114,13.981,440.4,0,474.505,0c1.484,0,2.9.024,4.357.076,43.869,1.542,78.009,16.237,101.471,43.681C595.059,60.97,605.311,83.1,610.8,109.53c5.564,26.824,6.236,58.1,2,92.969-8.906,73.357-102.859,183.646-142.83,227.658C402.4,504.544,329.23,567.4,310.19,567.41Z" transform="translate(1555.365 227.59)"/>
+    </g>
+  </g>
+</svg>

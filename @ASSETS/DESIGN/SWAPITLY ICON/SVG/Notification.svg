@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="641" height="597" viewBox="0 0 641 597">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Notification);
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+      }
+    </style>
+    <clipPath id="clip-Notification">
+      <rect width="641" height="597"/>
+    </clipPath>
+  </defs>
+  <g id="Notification" class="cls-1">
+    <g id="Group_13" data-name="Group 13" transform="translate(-696.638 -381)">
+      <path id="Union_1" data-name="Union 1" class="cls-2" d="M26.9,467.714S0,462.1,0,425.854s26.9-37.789,26.9-37.789H559.232S586,384.755,586,425.854s-26.768,41.861-26.768,41.861Zm21.438-79.88S42.452-3.939,289.4.03s244.536,387.8,244.536,387.8Z" transform="translate(730.638 413.876)"/>
+      <path id="Path_36" data-name="Path 36" class="cls-2" d="M6752.469,1635.41H6878.8s-1.275,51.881-61.222,51.881S6752.469,1635.41,6752.469,1635.41Z" transform="translate(-5805.995 -737.694)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="641" height="597" viewBox="0 0 641 597">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-My_Trade);
+      }
+
+      .cls-2, .cls-3, .cls-6 {
+        fill: none;
+      }
+
+      .cls-2, .cls-4 {
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        stroke-width: 34px;
+      }
+
+      .cls-3 {
+        stroke: #35badc;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 47px;
+      }
+
+      .cls-4 {
+        fill: #707070;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-My_Trade">
+      <rect width="641" height="597"/>
+    </clipPath>
+  </defs>
+  <g id="My_Trade" data-name="My Trade" class="cls-1">
+    <g id="Ellipse_63" data-name="Ellipse 63" class="cls-2" transform="translate(27 6)">
+      <circle class="cls-5" cx="292" cy="292" r="292"/>
+      <circle class="cls-6" cx="292" cy="292" r="275"/>
+    </g>
+    <path id="Path_129" data-name="Path 129" class="cls-3" d="M19803.5,1970.517h343.672l-100.018-64.231" transform="translate(-19657.586 -1712.069)"/>
+    <path id="Path_130" data-name="Path 130" class="cls-3" d="M20143.066,1910.727h-345.187l97,63.412" transform="translate(-19651.969 -1565.866)"/>
+    <path id="Path_131" data-name="Path 131" class="cls-4" d="M19586.91,1248.036s124.2,51.507,227.209,0c-3.961,1.321,124.143-87.164,211.307-100.37,0,2.641-144.008,154.518-144.008,154.518l-109.615,25.093-136.029-25.093Z" transform="translate(-19441 -756)"/>
+  </g>
+</svg>

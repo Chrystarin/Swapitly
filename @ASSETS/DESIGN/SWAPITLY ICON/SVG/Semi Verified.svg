@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="641" height="597" viewBox="0 0 641 597">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Semi_Verified);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        filter: url(#Path_110);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.078" y1="0.123" x2="0.777" y2="0.887" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#98ff98"/>
+      <stop offset="1" stop-color="#3bdc35"/>
+    </linearGradient>
+    <filter id="Path_110" x="96.512" y="67.048" width="501.195" height="469.813" filterUnits="userSpaceOnUse">
+      <feOffset dx="17" dy="20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="32" result="blur"/>
+      <feFlood flood-opacity="0.6"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Semi_Verified">
+      <rect width="641" height="597"/>
+    </clipPath>
+  </defs>
+  <g id="Semi_Verified" data-name="Semi Verified" class="cls-1">
+    <g id="Group_90" data-name="Group 90" transform="translate(-8 -1)">
+      <path id="Path_109" data-name="Path 109" class="cls-2" d="M15654.762,39.229S15831.208-40.52,15891.526-67.1a4.7,4.7,0,0,1,4.508,0l235.252,106.332s-3.079,199.1-1.848,197.869c-17.243,85.6-65.895,224.781-234.019,276.512-159.5-38.182-227.245-192.758-238.946-276.512C15656.474,235.866,15654.762,39.229,15654.762,39.229Z" transform="translate(-15569 77)"/>
+      <g class="cls-4" transform="matrix(1, 0, 0, 1, 8, 1)">
+        <path id="Path_110-2" data-name="Path 110" class="cls-3" d="M15809.41,198.715s4.756-31.52,28.352-20.294c-.033.134,56.4,65.059,66.861,66.85,53.8-62.878,125.654-134.5,203.709-166.642,6.428-.689,11.967,8.7,9.793,13.738-56.334,50.946-151.656,156.356-198.057,261.262-1.01.5-10.09,5.988-29.145,0C15890.42,354.638,15809.41,198.715,15809.41,198.715Z" transform="translate(-15633.9 64.45)"/>
+      </g>
+    </g>
+  </g>
+</svg>
