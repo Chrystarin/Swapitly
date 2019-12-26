@@ -64,7 +64,6 @@
                             </form>
                        </div>
                        
-                        <a href="/products" class="navbar-brand">Products    </a>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -74,7 +73,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a href="/products/create" class="btn btn-default btn-lg">New Trade</a></li>
+                            <li><a href="/products/create" class="btn btn-default btn-lg">Trade Now</a></li>
                             <li><img style="width:75px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle col-md-2"></li>
                             {{-- Dropdown Selection --}}
                             <li class="dropdown">
