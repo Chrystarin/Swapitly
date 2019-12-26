@@ -8,6 +8,9 @@
                 <div class="panel-heading">Homepage</div>
                 <div class="panel-body">
                     This is the homepage
+
+                    
+                    <a href="/products" class="btn btn-default btn-lg">Products    </a>
                 </div>
                 </div>
             </div>
