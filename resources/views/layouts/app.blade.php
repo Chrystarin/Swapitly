@@ -49,9 +49,8 @@
                                 {{ csrf_field() }}
                                 <span class="input-group-btn">
                                     <select id="category" name="category" class="btn btn-default btn-lg">  
-                                        <option value = "All">All</option>
+                                        <option value = "Items">Items</option>
                                         <option value = "Traders">Traders</option>
-                                        <option value = "Products">Products</option>
                                         <option value = "Fashion">Fashion</option>
                                         <option value = "Entertainment">Entertainment</option>
                                         <option value = "Appliances">Appliances</option>
@@ -75,7 +74,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a href="/products" class="btn btn-default btn-lg">New Trade</a></li>
+                            <li><a href="/products/create" class="btn btn-default btn-lg">New Trade</a></li>
                             <li><img style="width:75px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle col-md-2"></li>
                             {{-- Dropdown Selection --}}
                             <li class="dropdown">
