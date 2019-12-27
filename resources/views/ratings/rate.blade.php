@@ -16,6 +16,7 @@
                         {{Form::label('review', 'Review')}}
                         {{Form::textarea('review', '', ['class' => 'form-control'])}}
                     </div>
+                    {{Form::hidden('id', $users->id)}}
                     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
                 {!! Form::close() !!}
                 </div>

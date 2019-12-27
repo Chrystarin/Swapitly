@@ -34,7 +34,7 @@
                         <h4>Ratings & Reviews</h4>
                         @if(!Auth::guest())
                             @if(Auth::user()->id!==$users->id)
-                                <a href="\ratings\create" class="btn btn-default btn-lg">Rate Me</a></li>
+                                <a href="\r\rate\{{$users->id}}" class="btn btn-default btn-lg">Rate Me</a></li>
                             @endif
                         @endif
                     </div>

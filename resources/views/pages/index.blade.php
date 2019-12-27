@@ -9,6 +9,7 @@
                     <br>
                     <a href="/products" class="btn btn-default btn-lg">Products</a>
                     <br><br>
+                    <a href="/ratings" class="btn btn-default btn-lg">Ratings</a>
                     <div class="test">This is a test</div>
                 </div>
             </div>

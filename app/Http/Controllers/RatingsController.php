@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Rating;
+use App\User;
+
 class RatingsController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class RatingsController extends Controller
      */
     public function index()
     {
-        //
+        return view('/');
     }
 
     /**
@@ -21,9 +24,10 @@ class RatingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function rate($id)
     {
-        return view('ratings.create');
+        $user = User::find($id);
+        return view('ratings.rate')->with('users', $user);
     }
 
     /**
@@ -34,7 +38,19 @@ class RatingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'rating' => 'required',
+            'review' => 'required',
+        ]);
+
+        $rate = new Rating;
+        $rate->rating = $request->input('rating');
+        $rate->review = $request->input('review');
+        $rate->user_id = $request->input('id');
+        $rate->rater_id = auth()->user()->id;
+        $rate->save();
+
+        return redirect('/');
     }
 
     /**
@@ -81,4 +97,5 @@ class RatingsController extends Controller
     {
         //
     }
+
 }

@@ -26,7 +26,11 @@ Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
 Route::get('/products/create', 'ProductsController@create');
 
+
 Auth::routes();
+
+Route::get('/r/rate/{id}', 'RatingsController@rate');
+
 
 Route::resource('profile', 'ProfilesController');
 Route::resource('ratings', 'RatingsController');
