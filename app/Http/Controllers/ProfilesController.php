@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Rating;
 use App\Auth;
 
 use Illuminate\Http\Request;
@@ -127,7 +128,16 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('profile.show')->with('users', $user);
+
+        $rating = Rating::find($id);
+        
+        $traders = User::where('id', $rating->rater_id);
+
+
+        return view('profile.show')
+        ->with('users', $user)
+        ->with('ratings', $user->ratings)
+        ->with('traders',  $traders);
     }
 
     /**
