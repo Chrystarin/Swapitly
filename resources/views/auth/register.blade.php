@@ -108,7 +108,6 @@
                             <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
-                                {{-- <input id="gender" type="text" class="form-control" name="gender" value="{{ old('gender') }}" required autofocus> --}}
                                 <select id="gender" class="form-control" name="gender" >  
                                     <option value = "Male">Male</option>
                                     <option value = "Female">Female</option>

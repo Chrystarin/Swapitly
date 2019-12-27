@@ -36,7 +36,7 @@
                                 <tr>
                                     <a href="/products/{{$item->id}}"  class="btn btn-default">
                                         <div class="card" style="width: 18rem;">
-                                            <img class="img-responsive" src="/storage/item_images/default_item.png" alt="Image">
+                                            <img class="img-responsive" src="/storage/item_images/{{$item->media_file}}" alt="Image">
                                             <div class="card-body">
                                             <h5 class="card-title">{{$item->item_name}}</h5>
                                             </div>
