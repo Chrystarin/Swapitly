@@ -47,7 +47,7 @@
                         <div class="col-lg-7">
                                 <form action="/search" method="POST" role="search" class="input-group input-group-lg">
                                 {{ csrf_field() }}
-                                <span class="input-group-btn">
+                                {{-- <span class="input-group-btn">
                                     <select id="category" name="category" class="btn btn-default btn-lg">  
                                         <option value = "Items">Items</option>
                                         <option value = "Traders">Traders</option>
@@ -56,8 +56,8 @@
                                         <option value = "Appliances">Appliances</option>
                                         <option value = "Hobbies">Hobbies</option>
                                     </select>
-                                </span>
-                                <input type="text" class="form-control input-lg" id="search" placeholder="Search categories, traders, users" name="search">
+                                </span> --}}
+                                <input type="text" class="form-control input-lg" id="search" placeholder="Search traders and items" name="search">
                                 <span class="input-group-btn">
                                  <button class="btn btn-default btn-lg" type="submit">Search</button>
                                </span> 
@@ -74,33 +74,21 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li><a href="/products/create" class="btn btn-default btn-lg">Trade Now</a></li>
-                            <li><img style="width:75px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle col-md-2"></li>
+                            <li>&nbsp;</li>
                             {{-- Dropdown Selection --}}
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->first_name }} <span class="caret"></span>
+                                    <div class="row"> 
+                                        {{ Auth::user()->first_name }} 
+                                        <img style="width:30px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle">
+                                        <span class="caret"></span>
+                                    </div>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="/profile/{{Auth::user()->id}}">
-                                            Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="\wishlist">
-                                            Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="\products\user">
-                                            My Products
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="\settings">
-                                            Settings
-                                        </a>
-                                    </li>
+                                    <li><a href="/profile/{{Auth::user()->id}}">Profile</a></li>
+                                    <li><a href="\wishlist">Wishlist</a></li>
+                                    <li><a href="\products\user">My Products</a></li>
+                                    <li><a href="\settings">Settings</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

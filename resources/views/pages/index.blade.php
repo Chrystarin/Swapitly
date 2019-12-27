@@ -1,20 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Homepage</div>
                 <div class="panel-body">
-                    This is the homepage
-
-                    
-                    <a href="/products" class="btn btn-default btn-lg">Products    </a>
+                    <div class="test">This is the homepage</div>
+                    <br>
+                    <a href="/products" class="btn btn-default btn-lg">Products</a>
+                    <br>
+                    <div class="test">This is a test</div>
                 </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection
