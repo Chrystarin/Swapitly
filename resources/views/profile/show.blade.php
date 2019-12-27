@@ -16,9 +16,9 @@
                             @endif
                         @endif
                         @if(!Auth::guest())
-                        @if(Auth::user()->id!==$users->id)
-                            <a href="\" class="btn btn-default btn-lg">Chat</a></li>
-                        @endif
+                            @if(Auth::user()->id!==$users->id)
+                                <a href="\" class="btn btn-default btn-lg">Chat</a></li>
+                            @endif
                         @endif
                         <hr>
                         <h4>Description</h4>

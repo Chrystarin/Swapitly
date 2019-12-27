@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row">
         <div class="panel panel-default">
-            <div class="panel-heading">Settings</div>
+            <div class="panel-heading">Help</div>
                 <div class="panel-body">
-                    <div class="test">This is the settings page</div>
+                    <div class="test">This is the help page</div>
                 </div>
             </div>
         </div>

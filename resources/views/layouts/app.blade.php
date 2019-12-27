@@ -50,16 +50,6 @@
                         <div class="col-lg-7">
                                 <form action="/search" method="POST" role="search" class="input-group input-group-lg">
                                 {{ csrf_field() }}
-                                {{-- <span class="input-group-btn">
-                                    <select id="category" name="category" class="btn btn-default btn-lg">  
-                                        <option value = "Items">Items</option>
-                                        <option value = "Traders">Traders</option>
-                                        <option value = "Fashion">Fashion</option>
-                                        <option value = "Entertainment">Entertainment</option>
-                                        <option value = "Appliances">Appliances</option>
-                                        <option value = "Hobbies">Hobbies</option>
-                                    </select>
-                                </span> --}}
                                 <input type="text" class="form-control input-lg" id="search" placeholder="Search traders and items" name="search">
                                 <span class="input-group-btn">
                                  <button class="btn btn-default btn-lg" type="submit">Search</button>
@@ -89,8 +79,8 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/profile/{{Auth::user()->id}}">Profile</a></li>
-                                    <li><a href="\wishlist">Wishlist</a></li>
-                                    <li><a href="\products\user">My Products</a></li>
+                                    <li><a href="\products\user">My Trades</a></li>
+                                    <li><a href="\favorites">Favorites</a></li>
                                     <li><a href="\settings">Settings</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -102,6 +92,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li><a href="\help">Help</a></li>
                                 </ul>
                             </li>
 

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->string('mobile_number');
             $table->string('address');
-            $table->mediumText('description');
+            $table->mediumText('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

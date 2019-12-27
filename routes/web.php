@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/', 'PagesController@index');
 Route::get('/profile', 'PagesController@profile');
-Route::get('/wishlist', 'PagesController@wishlist');
+Route::get('/favorites', 'PagesController@favorites');
 Route::get('/mytrades', 'PagesController@mytrades');
 Route::get('/settings', 'PagesController@settings');
+Route::get('/help', 'PagesController@help');
 
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
