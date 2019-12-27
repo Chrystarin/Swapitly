@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('sass/app.scss') }}" rel="stylesheet">
     
 </head>
@@ -48,7 +48,7 @@
 
                     {{-- Search Bar --}}
                         <div class="col-lg-7">
-                                <form action="/search" method="POST" role="search" class="input-group input-group-lg">
+                            <form action="/search" method="POST" role="search" class="input-group input-group-lg">
                                 {{ csrf_field() }}
                                 <input type="text" class="form-control input-lg" id="search" placeholder="Search traders and items" name="search">
                                 <span class="input-group-btn">
