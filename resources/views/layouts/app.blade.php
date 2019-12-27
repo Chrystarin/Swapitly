@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Website Icon --}}
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -31,8 +34,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a  href="{{ url('/') }}">
+                        <img class="navbar-brand" src="/storage/images/swapitly_logo.png">
                     </a>
                 </div>
 
@@ -81,7 +84,7 @@
                                     <div class="row"> 
                                         {{ Auth::user()->first_name }} 
                                         <img style="width:30px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle">
-                                        <span class="caret"></span>
+                                        <i class="glyphicon glyphicon-option-vertical"></i>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
