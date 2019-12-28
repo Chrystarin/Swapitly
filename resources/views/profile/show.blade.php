@@ -73,7 +73,7 @@
                         @else
                           <p>No available ratings and reviews</p>
                         @endif --}}
-
+{{-- 
                         @if(count($traders) > 0)
                             @foreach($traders as $trader)
                                 {{$trader->username}}<br>
@@ -81,7 +81,7 @@
                         @else
                           <p>No available ratings and reviews</p>
                         @endif
-                        
+                         --}}
 
                     </div>
                 </div>
