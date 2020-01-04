@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
+use App\ProductFile;
 
 class ProductsController extends Controller
 {
@@ -17,7 +18,7 @@ class ProductsController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('products.index')->with('prods', $user->products);
+        return view('products.user')->with('prods', $user->products);
     }
 
     /**
@@ -61,22 +62,7 @@ class ProductsController extends Controller
             'tags' => 'required',
             'media_file' => 'required'
         ]);
-
         
-        //Handle File Upload for Profile Image
-        if($request->hasFile('media_file')){
-            //Get filename with the extension
-            $filenameWithExt = $request->file('media_file')->getClientOriginalName();
-            //Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //Get just ext
-            $extension = $request->file('media_file')->getClientOriginalExtension();
-            //Filename to store
-            $fileNameToStoreProfile = $filename.'_'.time().'.'.$extension;
-            //Upload Image
-            $path = $request->file('media_file')->storeAs('public/item_images', $fileNameToStoreProfile);
-        } 
-
         $prod = new Product;
         $prod->item_name = $request->input('item_name');
         $prod->category = $request->input('category');
@@ -87,11 +73,29 @@ class ProductsController extends Controller
         $prod->reason_for_trading = $request->input('reason_for_trading');
         $prod->desired_item = $request->input('desired_item');
         $prod->tags = $request->input('tags');
-        if($request->hasFile('media_file')){
-            $prod->media_file = $fileNameToStoreProfile;
-        }
         $prod->user_id = auth()->user()->id;
         $prod->save();
+
+        //Handle File Upload for Profile Image
+        if($request->hasFile('media_file')){
+            foreach($request->file('media_file') as $file) {
+                //Get filename with the extension
+                $filenameWithExt = $file->getClientOriginalName();
+                //Get just filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //Get just ext
+                $extension = $file->getClientOriginalExtension();
+                //Filename to store
+                $fileNameToStoreProfile = $filename.'_'.time().'.'.$extension;
+                //Upload Image
+                $path = $file->storeAs('public/item_images', $fileNameToStoreProfile);
+
+                $product_file = new ProductFile;
+                $product_file->product_id = $prod->id;
+                $product_file->media_file = $fileNameToStoreProfile;
+                $product_file->save();
+            }
+        }
 
         return redirect('/products/user')->with('success', 'Product posted');
     }
@@ -117,7 +121,10 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $prod = Product::find($id);
-        return view('products.edit')->with('prod', $prod);
+        return view('products.edit')
+        ->with('prod', $prod)
+        ->with('categs', array('Accessories', 'Appliances', 'Electronics', 'Entertainment', 'Fashion', 'Gadgets', 'Hobbies', 'Stationary', 'Others'))
+        ->with('quals', array('Brand New', 'Used', 'Others'));
     }
 
     /**
@@ -129,15 +136,62 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // WHEN UPDATING THE PRODUCT...
+        // IF THE media_file FEILD IS EMPTY
+            // THE OLD FILES WILL STILL REMAIN
+        // ELSE IF THE media_file FIELD HAS FILES
+            // THE OLD FILES WILL BE DELETED AND REPLACED WITH LATEST FILES
+
         $this->validate($request, [
             'item_name' => 'required',
-            'description' => 'required'
+            'category' => 'required',
+            'quality' => 'required',
+            'quantity' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'reason_for_trading' => 'required',
+            'desired_item' => 'required',
+            'tags' => 'required'
         ]);
-
+        
         $prod = Product::find($id);
         $prod->item_name = $request->input('item_name');
+        $prod->category = $request->input('category');
+        $prod->quality = $request->input('quality');
+        $prod->quantity = $request->input('quantity');
+        $prod->location = $request->input('location');
         $prod->description = $request->input('description');
+        $prod->reason_for_trading = $request->input('reason_for_trading');
+        $prod->desired_item = $request->input('desired_item');
+        $prod->tags = $request->input('tags');
+        $prod->user_id = auth()->user()->id;
         $prod->save();
+
+        //Handle File Upload for Profile Image
+        if($request->hasFile('media_file')){
+            foreach($prod->productFiles as $file) {
+                unlink(public_path().'/storage/item_images/'.$file->media_file);
+                $file->delete();
+            }
+
+            foreach($request->file('media_file') as $file) {
+                //Get filename with the extension
+                $filenameWithExt = $file->getClientOriginalName();
+                //Get just filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //Get just ext
+                $extension = $file->getClientOriginalExtension();
+                //Filename to store
+                $fileNameToStoreProfile = $filename.'_'.time().'.'.$extension;
+                //Upload Image
+                $path = $file->storeAs('public/item_images', $fileNameToStoreProfile);
+
+                $product_file = new ProductFile;
+                $product_file->product_id = $prod->id;
+                $product_file->media_file = $fileNameToStoreProfile;
+                $product_file->save();
+            }
+        }
 
         return redirect('/products/user')->with('success', 'Product updated');
     }
@@ -151,6 +205,10 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $prod = Product::find($id);
+        foreach($prod->productFiles as $file) {
+            unlink(public_path().'/storage/item_images/'.$file->media_file);
+            $file->delete();
+        }
         $prod->delete();
         return redirect('/products/user')->with('success', 'Product removed');
     }

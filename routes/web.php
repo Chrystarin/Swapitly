@@ -24,7 +24,6 @@ Route::get('/help', 'PagesController@help');
 
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
-Route::get('/products/create', 'ProductsController@create');
 
 
 Auth::routes();

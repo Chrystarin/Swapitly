@@ -161,7 +161,7 @@
                             {{Form::label('media_file', 'Media File', ['class' => 'col-md-2 control-label'])}}
                             <div class="col-md-8">
 
-                                {{Form::file('media_file', ['class' => 'form-control'])}}
+                                {{Form::file('media_file[]', ['class' => 'form-control', 'multiple' => 'true'])}}
 
                                 @if ($errors->has('media_file'))
                                     <span class="help-block">

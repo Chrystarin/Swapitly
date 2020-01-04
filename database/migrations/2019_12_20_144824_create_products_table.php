@@ -24,7 +24,6 @@ class CreateProductsTable extends Migration
             $table->mediumText('reason_for_trading');
             $table->string('desired_item');
             $table->string('tags');
-            $table->string('media_file');
             $table->timestamps();
         });
     }
