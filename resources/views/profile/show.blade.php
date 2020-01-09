@@ -50,39 +50,13 @@
                                 <tr>
                                     <td style="width: 30%">{{$rate->rating}}</td>
                                     <td style="width: 30%">{{$rate->review}}</td>
-                                    <td style="width: 30%">{{$rate->rater_id}}</td>
+                                    <td style="width: 30%"><a href="/profile/{{$rate->rater_id}}">{{$rate->username}}</a></td>
                                 </tr>
                           @endforeach
                         @else
                           <p>No available ratings and reviews</p>
                         @endif
-                        
-
                         <br>
-                        
-                        {{-- @if(count($traders) > 0)
-                        <table class="table table-striped">
-                          <tr>
-                            <th style="width: 30%">Rater</th>
-                          </tr>
-                          @foreach($traders as $trader)
-                                <tr>
-                                    <td style="width: 30%">{{$trader->username}}</td>
-                                </tr>
-                          @endforeach
-                        @else
-                          <p>No available ratings and reviews</p>
-                        @endif --}}
-{{-- 
-                        @if(count($traders) > 0)
-                            @foreach($traders as $trader)
-                                {{$trader->username}}<br>
-                            @endforeach
-                        @else
-                          <p>No available ratings and reviews</p>
-                        @endif
-                         --}}
-
                     </div>
                 </div>
             </div>

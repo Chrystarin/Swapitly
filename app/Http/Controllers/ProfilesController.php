@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Rating;
 use App\Auth;
+use DB;
+use App\Quotation;
 
 use Illuminate\Http\Request;
 
@@ -128,16 +130,18 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-
         $rating = Rating::find($id);
         
-        $traders = User::where('id', $rating->rater_id);
-
+        $rates = DB::table('ratings')
+        ->select('ratings.rating','ratings.review','ratings.rater_id', 'users.username')
+        ->join('users','users.id','=','ratings.rater_id')
+        ->where(['ratings.user_id' => $id])
+        ->get();
 
         return view('profile.show')
         ->with('users', $user)
-        ->with('ratings', $user->ratings)
-        ->with('traders',  $traders);
+        ->with('ratings', $rates);
+
     }
 
     /**
