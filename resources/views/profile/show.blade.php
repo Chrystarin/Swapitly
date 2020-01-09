@@ -16,9 +16,9 @@
                             @endif
                         @endif
                         @if(!Auth::guest())
-                        @if(Auth::user()->id!==$users->id)
-                            <a href="\" class="btn btn-default btn-lg">Chat</a></li>
-                        @endif
+                            @if(Auth::user()->id!==$users->id)
+                                <a href="\" class="btn btn-default btn-lg">Chat</a></li>
+                            @endif
                         @endif
                         <hr>
                         <h4>Description</h4>
@@ -34,9 +34,55 @@
                         <h4>Ratings & Reviews</h4>
                         @if(!Auth::guest())
                             @if(Auth::user()->id!==$users->id)
-                                <a href="\ratings\create" class="btn btn-default btn-lg">Rate Me</a></li>
+                                <a href="\r\rate\{{$users->id}}" class="btn btn-default btn-lg">Rate Me</a></li>
                             @endif
                         @endif
+
+                        @if(count($ratings) > 0)
+                        <table class="table table-striped">
+                          <tr>
+                            <th style="width: 30%">Rate</th>
+                            <th style="width: 30%">Review</th>
+                            <th style="width: 30%">Rater</th>
+
+                          </tr>
+                          @foreach($ratings as $rate)
+                                <tr>
+                                    <td style="width: 30%">{{$rate->rating}}</td>
+                                    <td style="width: 30%">{{$rate->review}}</td>
+                                    <td style="width: 30%">{{$rate->rater_id}}</td>
+                                </tr>
+                          @endforeach
+                        @else
+                          <p>No available ratings and reviews</p>
+                        @endif
+                        
+
+                        <br>
+                        
+                        {{-- @if(count($traders) > 0)
+                        <table class="table table-striped">
+                          <tr>
+                            <th style="width: 30%">Rater</th>
+                          </tr>
+                          @foreach($traders as $trader)
+                                <tr>
+                                    <td style="width: 30%">{{$trader->username}}</td>
+                                </tr>
+                          @endforeach
+                        @else
+                          <p>No available ratings and reviews</p>
+                        @endif --}}
+
+                        @if(count($traders) > 0)
+                            @foreach($traders as $trader)
+                                {{$trader->username}}<br>
+                            @endforeach
+                        @else
+                          <p>No available ratings and reviews</p>
+                        @endif
+                        
+
                     </div>
                 </div>
             </div>

@@ -108,7 +108,6 @@
                             <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
-                                {{-- <input id="gender" type="text" class="form-control" name="gender" value="{{ old('gender') }}" required autofocus> --}}
                                 <select id="gender" class="form-control" name="gender" >  
                                     <option value = "Male">Male</option>
                                     <option value = "Female">Female</option>
@@ -146,20 +145,6 @@
                                 @if ($errors->has('address'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                            <label for="description" class="col-md-4 control-label">About</label>
-
-                            <div class="col-md-6">
-                                <textarea id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" placeholder="Write something about yourself" autofocus></textarea>
-
-                                @if ($errors->has('description'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
                                     </span>
                                 @endif
                             </div>

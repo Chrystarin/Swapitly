@@ -19,6 +19,7 @@
     </div>
     @if (count($prods) > 0)
         @foreach($prods as $prod)
+        <img class="img-responsive" src="/storage/item_images/{{$prod->media_file}}" alt="Image">
             <a href="/products/{{$prod->id}}" style="text-decoration: none; color: inherit;">
                 <div class="well">
                     <h3>{{$prod->item_name}}</h3>

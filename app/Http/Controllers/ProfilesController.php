@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Rating;
 use App\Auth;
 
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class ProfilesController extends Controller
             'gender' => 'required|string|max:255',
             'mobile_number' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'string|nullable',
             'profile_image' => 'image|nullable',
             'cover_image' => 'image|nullable'
             
@@ -82,7 +83,8 @@ class ProfilesController extends Controller
         }
         $user->save();
 
-        return redirect('/profile/{{Auth::user()->id}}');
+        $user = User::find($id);
+        return view('profile.show')->with('users', $user);
     }
 
     /**
@@ -126,7 +128,16 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('profile.show')->with('users', $user);
+
+        $rating = Rating::find($id);
+        
+        $traders = User::where('id', $rating->rater_id);
+
+
+        return view('profile.show')
+        ->with('users', $user)
+        ->with('ratings', $user->ratings)
+        ->with('traders',  $traders);
     }
 
     /**
@@ -139,6 +150,5 @@ class ProfilesController extends Controller
     {
         //
     }
-
     
 }

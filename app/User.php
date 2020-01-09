@@ -35,4 +35,8 @@ class User extends Authenticatable
     // Timestamps
     public $timestamps= true;
 
+    public function ratings(){
+        return $this->hasMany('App\Rating');
+    }
+
 }

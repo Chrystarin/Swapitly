@@ -14,8 +14,8 @@ class PagesController extends Controller
         return view('pages.profile');
     }
 
-    public function wishlist(){
-        return view('pages.wishlist');
+    public function favorites(){
+        return view('pages.favorites');
     }
 
     public function mytrades(){
@@ -24,5 +24,9 @@ class PagesController extends Controller
 
     public function settings(){
         return view('pages.settings');
+    }
+
+    public function help(){
+        return view('pages.help');
     }
 }

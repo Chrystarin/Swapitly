@@ -10,9 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Website Icon --}}
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('sass/app.scss') }}" rel="stylesheet">
     
 </head>
@@ -31,8 +34,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a  href="{{ url('/') }}">
+                        <img class="navbar-brand" src="/storage/images/swapitly_logo.png">
                     </a>
                 </div>
 
@@ -45,18 +48,8 @@
 
                     {{-- Search Bar --}}
                         <div class="col-lg-7">
-                                <form action="/search" method="POST" role="search" class="input-group input-group-lg">
+                            <form action="/search" method="POST" role="search" class="input-group input-group-lg">
                                 {{ csrf_field() }}
-                                {{-- <span class="input-group-btn">
-                                    <select id="category" name="category" class="btn btn-default btn-lg">  
-                                        <option value = "Items">Items</option>
-                                        <option value = "Traders">Traders</option>
-                                        <option value = "Fashion">Fashion</option>
-                                        <option value = "Entertainment">Entertainment</option>
-                                        <option value = "Appliances">Appliances</option>
-                                        <option value = "Hobbies">Hobbies</option>
-                                    </select>
-                                </span> --}}
                                 <input type="text" class="form-control input-lg" id="search" placeholder="Search traders and items" name="search">
                                 <span class="input-group-btn">
                                  <button class="btn btn-default btn-lg" type="submit">Search</button>
@@ -81,13 +74,13 @@
                                     <div class="row"> 
                                         {{ Auth::user()->first_name }} 
                                         <img style="width:30px"src="/storage/profile_images/{{Auth::user()->profile_image}}" class="img-circle">
-                                        <span class="caret"></span>
+                                        <i class="glyphicon glyphicon-option-vertical"></i>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/profile/{{Auth::user()->id}}">Profile</a></li>
-                                    <li><a href="\wishlist">Wishlist</a></li>
-                                    <li><a href="\products\user">My Products</a></li>
+                                    <li><a href="\products\user">My Trades</a></li>
+                                    <li><a href="\favorites">Favorites</a></li>
                                     <li><a href="\settings">Settings</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -99,6 +92,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li><a href="\help">Help</a></li>
                                 </ul>
                             </li>
 
