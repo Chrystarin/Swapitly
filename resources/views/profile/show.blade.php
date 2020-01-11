@@ -32,6 +32,10 @@
                         <h4>My Trades</h4>
                         <hr>
                         <h4>Ratings & Reviews</h4>
+
+                        {{$average}} ({{$totalCount}})<br>
+
+
                         @if(!Auth::guest())
                             @if(Auth::user()->id!==$users->id)
                                 <a href="\r\rate\{{$users->id}}" class="btn btn-default btn-lg">Rate Me</a></li>
