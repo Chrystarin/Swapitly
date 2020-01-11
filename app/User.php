@@ -40,7 +40,6 @@ class User extends Authenticatable
     }
 
     public function products() {
-        return $this->hasMany('App\Product');
+        return $this->belongsToMany('App\Product');
     }
-
 }

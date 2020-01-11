@@ -16,9 +16,8 @@ class ProductsController extends Controller
 
     public function user()
     {
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-        return view('products.user')->with('prods', $user->products);
+        $products = User::find(auth()->user()->id)->products;
+        return view('products.user')->with('prods', $products);
     }
 
     /**
@@ -73,8 +72,9 @@ class ProductsController extends Controller
         $prod->reason_for_trading = $request->input('reason_for_trading');
         $prod->desired_item = $request->input('desired_item');
         $prod->tags = $request->input('tags');
-        $prod->user_id = auth()->user()->id;
         $prod->save();
+
+        User::find(auth()->user()->id)->products()->attach($prod->id);
 
         //Handle File Upload for Profile Image
         if($request->hasFile('media_file')){
@@ -136,11 +136,13 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // WHEN UPDATING THE PRODUCT...
-        // IF THE media_file FEILD IS EMPTY
-            // THE OLD FILES WILL STILL REMAIN
-        // ELSE IF THE media_file FIELD HAS FILES
-            // THE OLD FILES WILL BE DELETED AND REPLACED WITH LATEST FILES
+        /*
+        WHEN UPDATING THE PRODUCT...
+        IF THE media_file FEILD IS EMPTY
+            THE OLD FILES WILL STILL REMAIN
+        ELSE IF THE media_file FIELD HAS FILES
+            THE OLD FILES WILL BE DELETED AND REPLACED WITH LATEST FILES
+        */
 
         $this->validate($request, [
             'item_name' => 'required',
@@ -164,7 +166,6 @@ class ProductsController extends Controller
         $prod->reason_for_trading = $request->input('reason_for_trading');
         $prod->desired_item = $request->input('desired_item');
         $prod->tags = $request->input('tags');
-        $prod->user_id = auth()->user()->id;
         $prod->save();
 
         //Handle File Upload for Profile Image
@@ -209,7 +210,9 @@ class ProductsController extends Controller
             unlink(public_path().'/storage/item_images/'.$file->media_file);
             $file->delete();
         }
+        User::find(auth()->user()->id)->products()->detach($id);
         $prod->delete();
+        
         return redirect('/products/user')->with('success', 'Product removed');
     }
 }

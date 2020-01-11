@@ -14,13 +14,14 @@
         @foreach($prods as $prod)
             <a href="/products/{{$prod->id}}" style="text-decoration: none; color: inherit;">
                 <div class="row">
-                    @foreach ($prod->productFiles as $file)
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <img class="img-responsive" src="/storage/item_images/{{$file->media_file}}" alt="Image">
-                        </div>
-                    @endforeach
+                    @if (count($prod->productFiles) > 0)
+                        @foreach ($prod->productFiles as $file)
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <img class="img-responsive" src="/storage/item_images/{{$file->media_file}}" alt="Image">
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
-                {{-- <img class="img-responsive" src="/storage/item_images/{{$prod->media_file}}" alt="Image"> --}}
                 <div class="well">
                     <h3>{{$prod->item_name}}</h3>
                     <p>{{$prod->description}}</p>
