@@ -147,14 +147,14 @@ class ProfilesController extends Controller
         ->select(DB::raw('COUNT(rating) as Total'))
         ->where(['ratings.user_id' => $id])
         ->get();
-        
+ 
 
         return view('profile.show')
         ->with('users', $user)
         ->with('ratings', $rates)
         ->with('average', $average)
         ->with('totalCount', $totalCount);
-
+ 
     }
 
     /**
