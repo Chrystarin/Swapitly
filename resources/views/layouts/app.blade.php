@@ -101,7 +101,7 @@
                 </div>
             </div>
         </nav>
-
+        <p id="wew">wew</p>
         @yield('content')
     </div>
 
