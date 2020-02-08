@@ -18,6 +18,8 @@ mix.styles([
    'resources/assets/css/styles.css'
    ], 'public/css/custom.css')
 
+mix.sass('resources/assets/sass/main.scss', 'public/css');
+
 // mix.styles([
 //    'public/css/styles.css',
 //    'public/css/app.css'

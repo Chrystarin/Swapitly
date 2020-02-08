@@ -1,5 +1,185 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(/../css/styles.css);@charset "UTF-8";
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html body {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+header nav {
+  width: 100%;
+  height: 100px;
+  background-color: #F9DC67;
+}
+
+header nav #NavHolder {
+  max-width: 1400px;
+  height: 100%;
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+}
+
+header nav #NavHolder > a img {
+  margin-top: 10px;
+  width: 185px;
+}
+
+header nav #NavHolder > #NavSearch {
+  padding-left: 80px;
+}
+
+header nav #NavHolder > #NavSearch form {
+  background: white;
+  width: 80%;
+  height: 32px;
+  display: grid;
+  border-radius: 5px;
+  grid-template-columns: 5fr .5fr;
+  margin-top: 45px;
+  padding-left: 10px;
+}
+
+header nav #NavHolder > #NavSearch form input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  font-size: 18px;
+  color: #807F7F;
+}
+
+header nav #NavHolder > #NavSearch form button {
+  background: #F9DC67;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  height: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 2px solid white;
+  position: relative;
+}
+
+header nav #NavHolder > #NavSearch form button img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 20px;
+}
+
+header nav #NavHolder > #NavStat {
+  padding-top: 8px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P1 {
+  width: 100%;
+  height: 16px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P1 div:nth-child(2) {
+  margin: 0 10px;
+  padding: 0 10px;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P1 div {
+  height: 100%;
+  float: right;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P1 div img {
+  height: 100%;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P1 div a {
+  text-decoration: none;
+  color: #807F7F;
+  font-size: 15px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis {
+  float: right;
+  padding-top: 30px;
+  display: none;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis a {
+  text-decoration: none;
+  padding: .5em;
+  color: white;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis a:nth-child(1) {
+  padding-left: 0;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis a:nth-child(2) {
+  margin-left: 20px;
+  background-color: #C8AA36;
+  border-radius: 8px;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis a:nth-child(2):hover {
+  background-color: #35BADC;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered {
+  float: right;
+  padding-top: 22px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered a:nth-child(1),
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered a:nth-child(2),
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered a:nth-child(3),
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu {
+  float: left;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered a {
+  text-decoration: none;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered > a:nth-child(1) {
+  color: #C8AA36;
+  background: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .4em .6em;
+  border-radius: 5px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered > a:nth-child(1):hover {
+  background: #35BADC;
+  color: white;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered > a:nth-child(2) img,
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered a:nth-child(3) img {
+  height: 34px;
+  margin-left: 20px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered ul {
+  list-style: none;
+}
+
 /*!
  * Bootstrap v3.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 Twitter, Inc.
