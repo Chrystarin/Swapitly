@@ -197,6 +197,7 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-holder #Notification-DropDown {
+  display: none;
   border-radius: 4px;
   position: absolute;
   top: 40px;
