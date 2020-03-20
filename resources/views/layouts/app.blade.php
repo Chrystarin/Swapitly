@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 	<script src="js/jquery.js"></script>
 	<script src="js/script.js"></script>
     
@@ -56,7 +56,7 @@
                         
                         <!--Guest User-->
                         @if (Auth::guest())
-                            <div>
+                            <div id="NotRegis">
 								<a href="{{ route('login') }}">Log in</a>
 								<a href="{{ route('register') }}">Sign up</a>
 							</div>	
