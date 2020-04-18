@@ -25,8 +25,6 @@ Route::get('/help', 'PagesController@help');
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
 
-
-
 Auth::routes();
 
 Route::get('/r/rate/{id}', 'RatingsController@rate');
