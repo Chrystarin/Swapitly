@@ -397,11 +397,26 @@ header {
                 grid-gap: 20px;
                
             }
-            //Input Birthday
-            #Birthday-FormPart1-Registration {
-                input {
-                    width: 40%;
-                    text-align: center;
+            #Gender-Bday-FormPart1-Registration {
+                //Input Birthday
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+                #Birthday-FormPart1-Registration {
+                    input {
+                        width: 98%;
+                        text-align: center;
+                    }
+                }
+                #Gender-FormPart1-Registration {
+                    select{
+                        width: 98%;
+                        height: 30px;
+                        border-radius: 5px;
+                        border: 2px solid map-get($map: $colors, $key: lDark); 
+                        padding-left: 5px;
+                        outline: none; 
+                    }
                 }
             }
             #ContactNumber-FormPart1-Registration{
