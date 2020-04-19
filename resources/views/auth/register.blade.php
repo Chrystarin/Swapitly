@@ -80,11 +80,14 @@
                 <h6 class="Desc">Confirm Password :</h6>
                 <input id="Confirm-Input" type="password" class="Validation">
             </div>
-
-            {{-- <a id="finish">Finish</a> --}}
+            <a id="finish" 
+                    onclick="event.preventDefault();
+                        document.getElementById('SignUp_Form').submit();">>
+                Finish
+            </a>
 
                 
-            <button type="submit">Finish</button>
+            {{-- <button type="submit">Finish</button> --}}
         </div>
     </form>
     <!-- NOTE * ID for every inputs
