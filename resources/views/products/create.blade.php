@@ -179,16 +179,16 @@
                     <div class="row form-group">
                         <div class="{{$errors->has('mode_of_trading') ? ' has-error' : ''}}">
                             <div class="row col-md-5 form-group">
-                                <label>{{Form::checkbox('pickup', 1, null)}}Pickup</label>
+                                <label>{{Form::checkbox('pickup', 'Pickup')}}Pickup</label>
                             </div>
 
                             <div class="row col-md-8 form-group">
-                                <label>{{Form::checkbox('delivery', 1, null)}}Delivery</label>
+                                <label>{{Form::checkbox('delivery', 'Delivery')}}Delivery</label>
                                 
                             </div>
 
                             <div class="row col-md-8 form-group">
-                                <label>{{Form::checkbox('meetup', 1, null)}}Meetup</label>
+                                <label>{{Form::checkbox('meetup', 'Meetup')}}Meetup</label>
                                 
                             </div>
 
