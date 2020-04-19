@@ -22,7 +22,7 @@
     <header>
 		@include('inc.navbar')
     </header>
-
+    @include('inc.module')
     <div id="app">
         {{-- <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -100,9 +100,8 @@
 		@yield('content')
 		
     </div>
-    <div>
-        @include('auth.register')
-    </div>
+    
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
