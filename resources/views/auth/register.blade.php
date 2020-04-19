@@ -12,27 +12,29 @@
             
         </div>
     </div>
-    <form action="get" id="SignUp_Form">
+    <form id="SignUp_Form"   method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
+
         <div id="FormPart1">
             <div id="Name-FormPart1-Registration" >
                 <div id="FirstName-FormPart1-Registration">
                     <h6 class="Desc">First Name :</h6>
-                    <input id="FirstName-Input" type="text" placeholder="ex. Dianne Chrystalin"  class="Validation input">
+                    <input id="first_name" type="text" placeholder="ex. Dianne Chrystalin"  class="Validation input"  name="first_name" value="{{ old('first_name') }}" >
                 </div>
                 <div id="LastName-FormPart1-Registration">
                     <h6 class="Desc">Last Name :</h6>
-                    <input id="LastName-Input" type="text" placeholder="ex. Brandez"  class="Validation input">
+                    <input id="last_name" type="text" placeholder="ex. Brandez"  class="Validation input"  name="last_name" value="{{ old('last_name') }}" >
                 </div>
             </div>
             <!--  -->
             <div id="Gender-Bday-FormPart1-Registration">
                 <div id="Birthday-FormPart1-Registration">
                     <h6 class="Desc">Birthday :</h6>
-                    <input id="Birthday-Input" type="date"  class="Validation input" >
+                    <input id="birthday" type="date"  class="Validation input"  name="birthday" value="{{ old('birthday') }}" >
                 </div>
                 <div id="Gender-FormPart1-Registration">
                     <h6 class="Desc">Gender :</h6>
-                    <select  id="Gender-Input" class="Validation input" aria-placeholder="Male">
+                    <select  id="gender" class="Validation input"  name="gender"  aria-placeholder="Male">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -43,13 +45,13 @@
                     <h6 class="Desc">Contact Number :</h6>
                     <div  class="Validation">
                         <p>+63</p>
-                        <input type="text" name="" id="ContactNumber-Input" placeholder="9156666147" class="input">	
+                        <input type="text" id="mobile_number" placeholder="9156666147" class="input"  name="mobile_number" value="{{ old('mobile_number') }}" >	
                     </div>
                 </div>
                 <div id="Address-FormPart1-Registration">
                     <h6 class="Desc">Address (Subdivision / Street / Barangay / City) : </h6>
                 <div>
-                    <input type="text" name="" id="Address-Input"  class="Validation input">	
+                    <input type="text" id="address"  class="Validation input"  name="address" value="{{ old('address') }}" >	
                 </div>
                 
                 <a id="next" data-Next="FormPart2">Next</a>
@@ -58,16 +60,16 @@
         <div id="FormPart2">	
             <div id="Email-FormPart2-Registration">
                 <h6 class="Desc">Email :</h6>
-                <input id="Email-Input" type="email" class="Validation" required>
+                <input id="email" type="email" class="Validation"  name="email" value="{{ old('email') }}" required>
             </div>
             <div id="Username-FormPart2-Registration">
                 <h6 class="Desc">Username (5 - 8 Characters) :</h6>
-                <input id="Username-Input" type="text" class="Validation">
+                <input id="username" type="text" class="Validation"  name="username" value="{{ old('username') }}">
             </div>
             <div id="Password-FormPart2-Registration">
                 <h6 class="Desc">Password :</h6>
                 <div class="Validation">
-                    <input id="Password-Input" type="password">
+                    <input id="password" type="password"  name="password">
                     <div id="Password_eye">
                         <img data-status="false" src="/storage/images/png/Eye.png" alt="">
                     </div>
@@ -78,19 +80,28 @@
                 <h6 class="Desc">Confirm Password :</h6>
                 <input id="Confirm-Input" type="password" class="Validation">
             </div>
-            <a id="finish">Finish</a>
+            <a id="finish" 
+                    onclick="event.preventDefault();
+                        document.getElementById('SignUp_Form').submit();">>
+                Finish
+            </a>
+
+                
+            {{-- <button type="submit">Finish</button> --}}
         </div>
     </form>
     <!-- NOTE * ID for every inputs
-        First Name : #FirstName-Input
-        Last Name : #LastName-Input
-        Birthday : #Birthday-Input
-        Contact Number: #ContactNumber-Input
-        Address : #Address-Input
-        
-        Email : #Email-Input
-        Username : #Username-Input
-        Password : #Password-Input
+        First Name : #first_name
+        Last Name : #last_name
+        Birthday : #birthday
+        Gender  : #gender
+        Contact Number: #mobile_number
+        Address : #address
+
+
+        Email : #email
+        Username : #username
+        Password : #password
         Confirm Password : #Confirm-Input
     -->
 </div>

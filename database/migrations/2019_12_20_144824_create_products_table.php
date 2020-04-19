@@ -24,6 +24,9 @@ class CreateProductsTable extends Migration
             $table->mediumText('reason_for_trading');
             $table->string('desired_item');
             $table->string('tags');
+            $table->boolean('pickup')->nullable()->default(false);
+            $table->boolean('delivery')->nullable()->default(false);
+            $table->boolean('meetup')->nullable()->default(false);
             $table->timestamps();
         });
     }
