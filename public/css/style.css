@@ -119,10 +119,14 @@ header nav #NavHolder > #NavStat #NavStat_P1 div a {
 header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis {
   float: right;
   padding-top: 30px;
+<<<<<<< HEAD:public/css/style.css
 <<<<<<< HEAD
 =======
   display: none;
 >>>>>>> parent of 00e8776... SCSS FIXED
+=======
+  display: none;
+>>>>>>> parent of 00e8776... SCSS FIXED:public/css/main.css
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #NotRegis a {
