@@ -72,9 +72,6 @@ class ProductsController extends Controller
         $prod->reason_for_trading = $request->input('reason_for_trading');
         $prod->desired_item = $request->input('desired_item');
         $prod->tags = $request->input('tags');
-        $prod->pickup = $request->input('pickup');
-        $prod->pickup = $request->input('delivery');
-        $prod->pickup = $request->input('meetup');
         $prod->save();
 
         User::find(auth()->user()->id)->products()->attach($prod->id);
