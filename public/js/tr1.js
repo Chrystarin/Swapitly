@@ -245,18 +245,18 @@ $(document).ready(function(){
         }
     });
 
-    $("#finish").on("click", function(e){
+    // $("#finish").on("click", function(e){
 
-        // STOP TWICE OF TRIGGERING OF BUTTON
-        e.stopImmediatePropagation();
-        // * Start of inputs validation
-        var inputs = $("#FormPart2 input");
-        // Step #3 
-        var checker = ["14","15","16","17"];
-        if( validation(inputs,checker) == true){
-            $("#SignUp_Form").submit();
-        }
-    });
+    //     // STOP TWICE OF TRIGGERING OF BUTTON
+    //     e.stopImmediatePropagation();
+    //     // * Start of inputs validation
+    //     var inputs = $("#FormPart2 input");
+    //     // Step #3 
+    //     var checker = ["14","15","16","17"];
+    //     if( validation(inputs,checker) == true){
+    //         $("#SignUp_Form").submit();
+    //     }
+    // });
  
     // Password Meter for checking the strength of the password
     $("#Password-Input").keyup(function(){
@@ -580,18 +580,18 @@ $(document).ready(function(){
         }
     });
 
-    $("#finish").on("click", function(e){
+    // $("#finish").on("click", function(e){
 
-        // STOP TWICE OF TRIGGERING OF BUTTON
-        e.stopImmediatePropagation();
-        // * Start of inputs validation
-        var inputs = $("#FormPart2 input");
-        // Step #3 
-        var checker = ["14","15","16","17"];
-        if( validation(inputs,checker) == true){
-            $("#SignUp_Form").submit();
-        }
-    });
+    //     // STOP TWICE OF TRIGGERING OF BUTTON
+    //     e.stopImmediatePropagation();
+    //     // * Start of inputs validation
+    //     var inputs = $("#FormPart2 input");
+    //     // Step #3 
+    //     var checker = ["14","15","16","17"];
+    //     if( validation(inputs,checker) == true){
+    //         $("#SignUp_Form").submit();
+    //     }
+    // });
  
     // Password Meter for checking the strength of the password
     $("#Password-Input").keyup(function(){
