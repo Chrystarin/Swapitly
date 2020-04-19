@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+<<<<<<< HEAD
     "/css/new.css": "/css/new.css"
+=======
+    "/css/app.css": "/css/app.css",
+    "/css/style.css": "/css/style.css"
+>>>>>>> parent of 00e8776... SCSS FIXED
 }
