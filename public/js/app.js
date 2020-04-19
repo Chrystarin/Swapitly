@@ -44868,7 +44868,7 @@ if (false) {
 /* 43 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Users\\iMcfury\\Documents\\GitHub\\Swapitly\\resources\\assets\\sass\\style.scss'\n    at C:\\Users\\iMcfury\\Documents\\GitHub\\Swapitly\\node_modules\\webpack\\lib\\NormalModule.js:195:19\n    at C:\\Users\\iMcfury\\Documents\\GitHub\\Swapitly\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\iMcfury\\Documents\\GitHub\\Swapitly\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at C:\\Users\\iMcfury\\Documents\\GitHub\\Swapitly\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:70:14\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
 
 /***/ })
 /******/ ]);

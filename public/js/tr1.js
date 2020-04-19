@@ -570,10 +570,10 @@ $(document).ready(function(){
         // STOP TWICE OF TRIGGERING OF BUTTON
         e.stopImmediatePropagation();
         // * Start of inputs validation
-        var inputs = $("#FormPart1 .input");
+        var inputs = $("#FormPart1 input");
 
         // Step #3
-        var checker = ["1","1","1","1","123","1"];
+        var checker = ["1","1","1","123","1"];
         if( validation(inputs,checker) == true){
             $("#FormPart1").css("display","none");
             $("#FormPart2").css("display","block");
@@ -709,14 +709,6 @@ $(document).ready(function(){
         $("#FormPart1").css("display","block");
         $("#FormPart2").css("display","none");
         $("#Module-Registration").fadeIn();
-    });
-    $("#Form-Registration input , #Form-Registration select").focusin(function(){
-        $(this).closest(".Validation").css("border-color","#35BADC" );
-    });
-    $("#Form-Registration input , #Form-Registration select").focusout(function(){
-        $(this).closest(".Validation").css("border-color","#807F7F" );
-    });
-
-
+    })
     // End of animations
 });
