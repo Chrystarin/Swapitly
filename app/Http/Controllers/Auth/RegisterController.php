@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'last_name' => 'required|string|max:255',
             'birthday' => 'required|string|max:255',
             'gender' => 'required|string|max:255',
-            'mobile_number' => 'required|digits:11',
+            'mobile_number' => 'required|digits:10',
             'address' => 'required|string|max:255'
         ]);
     }
