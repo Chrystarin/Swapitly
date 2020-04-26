@@ -34,7 +34,7 @@
                 @if (Auth::guest())
                     <div id="NotRegis">
                         <a href="{{ route('login') }}">Log in</a>
-                        <a href="{{ route('register') }}">Sign up</a>
+                        <a id="Signup" href="#">Sign up</a>
                     </div>	
                 
                 <!--Registered User-->

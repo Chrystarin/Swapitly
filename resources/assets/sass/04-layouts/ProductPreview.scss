@@ -1,0 +1,331 @@
+#ProductPreview_Holder {
+    #ProductPreview_Information, > div{
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 11px #808080b5;
+        margin: 15px 0;
+    }
+    #ProductPreview_Information {      
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr .85fr;
+        
+        > div {
+            padding: 10px;
+        }
+        #ProductPreview_Information_Image {
+            #ProductPreview_Information_Image_Holder{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #ProductPreview_Information_Description {
+            position: relative;
+            #ProductName {
+                margin-bottom: 10px;
+                color: map-get($map: $colors, $key: Dark);
+                font-size: 28px;
+            }
+            .ProductContent_Div {
+                width: 100%;
+                clear: left;
+                margin-bottom: 15px;
+                .ProductDesc{
+                    color: map-get($map: $colors, $key: lDark);
+                    margin-right: 5px;
+                    float: left;
+                    
+                }
+                // For ever value of the description
+                .ProductDesc_Value {
+                    color: map-get($map: $colors, $key: Dark);
+                }   
+            }
+            #ProductQuantity_div{
+                #ProductQuantity_div_NumPicker{
+                    display: grid;
+                    width: 90px;
+                    grid-template-columns: 30px 30px 30px;
+                    > div {
+                        cursor: pointer;
+                        text-align: center;
+                        color: white;
+                        font-weight: bolder;
+                        border-radius: 4px;
+                    }
+                    div:nth-child(1){
+                        background-color: #f77758;
+                    }
+                    div:nth-child(1):hover{
+                        background-color: #f5461b;
+                    }
+                    div:nth-child(3){
+                        background-color:  #66da6b;
+                    }
+                    div:nth-child(3):hover{
+                        background-color: rgb(63, 219, 63);
+                       
+                    }
+                    > input {
+                        border: none;
+                        text-align: center;
+                    }
+                }
+            }
+            #ProductDescription_div{
+                #ProductDescription{
+                    color: map-get($map: $colors, $key: Dark);
+                    margin-bottom: 80px;
+                    text-align: justify;
+                }
+            }
+
+            #ProductsButton {
+                height: 30px;
+                position: absolute;
+                bottom: 15px;
+                left: 45%;
+                transform: translateX(-60%);
+                button {
+                    display: inline-table;
+                    float: left;
+                    outline: none;
+                    cursor: pointer;
+                }
+                button:nth-child(1) {
+                    height: 100%;
+                    background: none;
+                    border: none;
+                    img {
+                        height: inherit;
+                    }
+                }
+                button:nth-child(2) {
+                    background: map-get($map: $colors, $key: accent);
+                    border: none;
+                    height: 100%;
+                    margin-left: 15px;
+                    padding: 0 1em;
+                    color: white;
+                    border-radius: 10px;
+                    transition: background .3s ease-in-out;
+                }
+                button:nth-child(2):hover {
+                    background: darken($color:  map-get($map: $colors, $key: accent), $amount: 20%);
+                }
+            }
+            #Product_DatePost{
+                position: absolute;
+                bottom: 10px;
+                right: 20px;
+                color: map-get($map: $colors, $key: lDark);
+            }
+        }
+        #ProductPreview_Information_ModeOfTrading {
+            background: #f3f3f3;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            > h3 {
+                margin: 10px 0;
+                text-align: center;
+                color: map-get($map: $colors, $key: Dark);
+            }
+            #Modeofchoice {
+                font-size: 14px;
+                label {
+                    display: block;
+                    margin: 0 0 10px;
+                    cursor: pointer;
+                    input[type="checkbox"] {
+                        display: none;
+                    }
+                    input[type="checkbox"] +  span {
+                        font-size: 1em;
+                        color: #6A6868;
+                        font-weight: bold;
+                    } 
+                    input[type="checkbox"] +  span:before {
+                        display:inline-block;
+                        width: 15px;  
+                        height: 15px;
+                        margin-right: 5px;
+                        content: "";                               
+                        background:url(https://image.flaticon.com/icons/svg/61/61218.svg) no-repeat 0 0;
+                        background-size: 15px;
+                    }  
+                    input[type="checkbox"]:checked +  span:before {
+                        display:inline-block;
+                        width: 15px;  
+                        height: 15px;
+                        margin-right: 5px;
+                        content: "";                               
+                        background:url(https://image.flaticon.com/icons/svg/25/25643.svg) no-repeat 0 0;
+                        background-size: 15px;
+                        animation: Popup .3s forwards;
+                    }
+                    @keyframes Popup {
+                        0% {
+                            transform: scale(.3);
+                        }
+                        90% {
+                            transform: scale(1.4);
+                        }
+                        100% {
+                            transform: scale(1);
+                        }
+                    }
+                    // transaction disabled
+                    input[type="checkbox"]:disabled + span {
+                        text-decoration: line-through;
+                        opacity: .4;
+                    }
+                    input[type="checkbox"]:disabled ~ ul li {
+                        display: none;
+                        opacity: .4;
+                    }
+                    input[type="checkbox"]:disabled ~ ul .disable {
+                        display: block;
+                    }
+                    input[type="checkbox"]:checked +  span:before {
+                        display:inline-block;
+                        width: 15px;  
+                        height: 15px;
+                        margin-right: 5px;
+                        content: "";                               
+                        background:url(https://image.flaticon.com/icons/svg/25/25643.svg) no-repeat 0 0;
+                        background-size: 15px;
+                    }
+                    // END of transaction disabled 
+                    ul {
+                        margin-top: 5px;
+                        list-style: none;
+                        padding: 0 18px;
+                        font-size: .8em;
+                        li {
+                            color: map-get($map: $colors, $key: Dark);
+                        }
+                        > .Location , .Date {
+                            margin-bottom: 5px;
+                            display: grid;
+                            grid-template-columns: 25px 1fr;
+                            
+                            img {
+                                height: 100%;
+                            }
+                            p {
+                                text-align: justify;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            
+            #User_Profile::before , #User_Profile::after{
+                content: "";
+                display: block;
+                margin: 10px 0; 
+                height: 2px;
+                background-color: lighten($color: map-get($map: $colors, $key: lDark), $amount: 30%);
+            }
+          
+            #User_Profile {
+                #User_Profile_Details {
+                    display: grid;
+                    grid-template-columns: .5fr 3fr .5fr;
+                    
+                    div:nth-child(1) {
+                        img {
+                            width: 100%;
+                            border-radius: 80%;
+                            border: 3px solid map-get($map: $colors, $key: lDark);
+                            box-sizing: border-box;
+                        }
+                    }
+                    div:nth-child(2) {
+                        line-height: calc(1em);
+                        padding: 0 .5em;
+                        h3 {
+                            color : map-get($map: $colors, $key: accent);
+                            font-size: 1.2em;
+                        }
+                        p  {
+                            color: map-get($map: $colors, $key: Dark);
+                            font-size: .9em;
+                            letter-spacing: .05em;
+                        }
+                        img {
+                            height: 1em;
+                        }
+                        
+                        span {
+                            color: rgb(237, 240, 49);
+                            font-weight: bold;
+                        }  
+                    }
+                    div:nth-child(3) {
+                        > a img {
+                            margin-top: .5em;
+                            height: 27px;
+                            float: left;
+                        }
+                    }
+                }
+                #User_Profile_UserAchivement{
+                    margin: 10px 0; 
+                    div {
+                       height: 20px;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+                #User_Profile_UserContact { 
+                    display: grid;
+                    grid-template-columns: 1fr 1.5fr;
+                    text-align: center;
+                    p:nth-child(1), p:nth-child(2) {
+                        color: darken($color: map-get($map: $colors, $key: Dark), $amount: 10%);
+                        margin-bottom: 5px;
+                        font-weight: bold
+                    }
+                    #User_Profile_UserContact-ContactNumber , #User_Profile_UserContact-Email {
+                        color: map-get($map: $colors, $key: lDark);
+                    }
+                }   
+            }
+            #TotalFrames {
+                > h3 { 
+                    text-align: center;
+                    color: map-get($map: $colors, $key: Dark);
+                }
+                div {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    text-align: center;
+                    margin-top: 10px;
+                    > h4 {
+                        color: map-get($map: $colors, $key: lDark);
+                        margin-bottom: 5px;
+                    }
+                    > h2 {
+                        padding: .1em 0;
+                        font-size: 3em;
+                        color: map-get($map: $colors, $key: Dark);
+                    }
+                    #TotalFrames-Success{
+                        border-left: 2px solid  map-get($map: $colors, $key: lDark);
+                        border-right: 2px solid  map-get($map: $colors, $key: lDark);
+                    }
+                }
+            }
+        }
+    }
+    > div {
+        padding: 1em; 
+        h1 {
+            color: map-get($map: $colors, $key: Dark);
+            margin-bottom: 10px;
+        }  
+    }
+}

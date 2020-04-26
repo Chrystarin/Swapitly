@@ -1,0 +1,65 @@
+$colors: (
+    primary:#F9DC67,
+    secondary: #C8AA36,
+    accent:#35BADC,
+    lDark:#807F7F,
+    Dark:#6A6868
+);
+
+$Minwidth: 1100px;
+$Maxwidth: 1400px;
+
+* {
+	margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+html    {
+    body{
+        width: 100%;
+        height: 100%;
+        background-color: #eeeeee;
+    }	
+}
+
+// Product Preview Content
+#Content_Holder {
+    width: 100%;
+    margin-top: 5px;
+    > div {
+        width: 95%;
+        min-width: $Minwidth;
+        max-width: $Maxwidth;
+        margin: auto;
+    }
+}
+
+
+// Class general css
+
+.Categ {
+    text-decoration: none;
+    color: map-get($map: $colors, $key: Dark);
+    border: 1px solid map-get($map: $colors, $key: Dark);
+    border-radius: 9px;
+    padding: .1em .4em;
+    display: inline-block;
+    transition:  color .9s ;
+    box-sizing: content-box;
+}
+.Categ:hover{
+    color: map-get($map: $colors, $key: accent);
+    border-color: map-get($map: $colors, $key: accent);
+}
+
+.CopyDisable::selection {
+    color: none;
+    background: none;
+}
+/* For Mozilla Firefox */
+.CopyDisable::-moz-selection {
+    color: none;
+    background: none;
+}
