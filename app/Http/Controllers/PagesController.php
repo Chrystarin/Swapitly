@@ -29,4 +29,7 @@ class PagesController extends Controller
     public function help(){
         return view('pages.help');
     }
+    public function ProductView(){
+        return view('products.ProductView');
+    }
 }

@@ -6,7 +6,6 @@ $(document).ready(function(){
         //       alert();  
         //     });
         // }
-        alert();
     }
     $("#Notification").click(function(){
         close();
@@ -312,8 +311,6 @@ $(document).ready(function(){
     $("#Module_close").on("click", () => {
         $("#Module-Registration").css("display","none");
     });
-
-    alert();
     $("#error-close").click(function(){
         $(this).closest("#error").fadeOut();
     });
@@ -348,9 +345,6 @@ $(document).ready(function(){
     $("#Form-Registration input , #Form-Registration select").focusout(function(){
         $(this).closest(".Validation").css("border-color","#807F7F" );
     });
-    $("#Signup").on("click",function(){
-        alert();
-        $("#Module-Registration").fadeIn();
-    });
+  
     // End of animations
 });

@@ -6,8 +6,6 @@ $(document).ready(function(){
         //       alert();  
         //     });
         // }
-
-        alert();
     }
     $("#Notification").click(function(){
         close();
@@ -348,6 +346,9 @@ $(document).ready(function(){
     });
     $("#Form-Registration input , #Form-Registration select").focusout(function(){
         $(this).closest(".Validation").css("border-color","#807F7F" );
+    });
+    $("#Signup").on("click",function(){
+        $("#Module-Registration").fadeIn();
     });
     // End of animations
 });

@@ -26,6 +26,8 @@ Route::get('/products', 'ProductsController@index');
 Route::get('/products/user', 'ProductsController@user');
 
 
+Route::get('/ProductView','PagesController@ProductView');
+
 
 Auth::routes();
 

@@ -323,9 +323,10 @@
     }
     > div {
         padding: 1em; 
-        h1 {
+        h3 {
             color: map-get($map: $colors, $key: Dark);
             margin-bottom: 10px;
+            
         }  
     }
 }
