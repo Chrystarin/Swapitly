@@ -8,9 +8,7 @@
             <h2>Create an Account</h2>
             <p>It's quick and easy</p>
             <div id="error">
-                
-                
-                <img src="{{asset("/storage/images/png/Error.png")}}" alt="">
+                <img  src="/storage/public/images/png/Error.png" alt="">
                 <p id="error-message">You didn't fill the input box</p>
                 <div id="error-close">
                     <div>

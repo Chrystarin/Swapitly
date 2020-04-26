@@ -1,4 +1,317 @@
+$colors: (
+    primary:#F9DC67,
+    secondary: #C8AA36,
+    accent:#35BADC,
+    lDark:#807F7F,
+    Dark:#6A6868
+);
+$width: 1400px;
 
+* {
+	margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier;
+}
+
+html    {
+    body{
+        width: 100%;
+        height: 100%;
+        
+    }	
+}
+
+header {
+    width: 100%;
+    nav {
+        width: 100%;
+        min-width: 1100px;    
+        height: 100px;
+        background-color: map-get($map: $colors, $key: primary);
+        
+        #NavHolder {
+            min-width: 1100px;
+            max-width: $width;
+            height: 100%;
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr 2fr;
+            > a img {
+                margin-top: 10px;
+                width: 185px;
+            }
+            > #NavSearch {
+                padding-left: 80px;
+                
+                form {
+                    background: white;
+                    width: 80%;
+                    height: 32px;
+                    display: grid;
+                    border-radius: 5px;
+                    grid-template-columns: 5fr .5fr;
+                    margin-top: 44px;
+                    padding-left: 10px;
+                    input {
+                        background: none;
+                        border: none;
+                        outline: none;
+                        height: 100%;
+                        font-size: 18px;
+                        color: map-get($map: $colors, $key: lDark);
+                    }
+                    button {
+                        background: map-get($map: $colors, $key: primary);
+                        box-sizing: border-box;
+                        border-radius: 5px;
+                        height: 100%;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                        border: 2px solid white;
+                        position: relative;
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+            > #NavStat {
+                padding-top: 8px;
+                #NavStat_P1 {
+                    width: 100%;
+                    height: 16px;
+                    div:nth-child(2) {
+                        margin: 0 10px;
+                        padding: 0 10px;
+                        border-left: 3px solid white;
+                        border-right: 3px solid white;
+                    }
+                    div {
+                        height: 100%;
+                        float: right;
+                        img {
+                            height: 100%;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: map-get($map: $colors, $key: lDark);
+                            font-size: 15px;
+                        }
+                    } 
+                }
+                #NavStat_P2{
+                    #NotRegis {
+                        float: right;
+                        padding-top: 30px;
+                        a {
+                            text-decoration: none;
+                            padding: .5em;
+                            color: white;
+                        }
+                        a:nth-child(1) {
+                            padding-left: 0;
+                        }
+                        a:nth-child(2) {
+                            margin-left: 20px;
+                            background-color: map-get($map: $colors, $key: secondary);
+                            border-radius: 8px;
+                            transition: background-color 300ms ease-out;
+                        }
+                        a:nth-child(2):hover {
+                            background-color: map-get($map: $colors, $key: accent);
+                        }
+                    }
+                    #Registered {
+                        float: right;
+                        padding-top: 22px;
+                        height: 55px;
+                        a:nth-child(1),#Img-But,a:nth-child(3),#menu {
+                         float: left;
+                        }
+                        a {
+                            text-decoration: none;
+                        }
+
+                        > a:nth-child(1) {
+                            color: map-get($map: $colors, $key: secondary);
+                            background: white;
+                            box-sizing: border-box;
+                            padding: .4em .6em;
+                            border-radius: 5px;
+                        }
+                        > a:nth-child(1):hover {
+                            background: map-get($map: $colors, $key: accent);
+                            color: white;
+                        }
+                        > a:nth-child(1):hover {
+                            background: map-get($map: $colors, $key: accent);
+                            color: white;
+                        }
+                        #Img-But {
+                            margin: 0 15px;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 13px;
+                            padding-top: 2px;
+                            #Heart img, #Notification {
+                                height: 28px;
+                                float: left;
+                                cursor: pointer;
+                            }
+                            #Notification-holder {
+                                position: relative;
+                                height: 28px;
+                                // Notification Drop down menu
+                                #Notification-DropDown {
+                                    display: none;
+                                    border-radius: 4px;
+                                    position: absolute; 
+                                    top: 40px;
+                                    right: 0;
+                                    width: 350px;
+                                    background-color: #EFEBEB;
+                                    padding: .5em 1em;
+                                    > #Notification-DropDown-header {
+                                        border-bottom: 2px solid map-get($map: $colors, $key: lDark);
+
+                                        padding-bottom: 2px;
+                                        height: auto;
+                                        span {
+                                            margin-left: 4px;
+                                            color: map-get($map: $colors, $key: accent);
+                                        }
+                                        p {
+                                            float: left;
+                                            font-size: 14px;
+                                            color: #6A6868;
+                                        }
+                                        a {
+                                            float: right;
+                                            font-size: 15px;
+                                            margin-left: 15px;
+                                            color: map-get($map: $colors, $key: lDark);
+                                        }
+                                    }
+                                    // Container for the list of notification
+                                    #ListOfNotif {
+                                        max-height: 200px;
+                                        overflow-y: scroll;
+                                        margin: 5px 0;
+                                        width: 100%;
+                                        // Style for the list of notification
+                                        .Notif-Lists {
+                                            display: block;
+                                            margin-bottom: 5px;
+                                            li {
+                                                box-sizing: border-box;
+                                                border-radius: 4px;
+                                                padding: 5px;
+                                                width: 100%;
+                                                background-color: white;
+                                                display: grid;
+                                                grid-template-columns: 1fr 5fr;
+                                                column-gap: 14px;
+                                                img{                                                
+                                                    border: 2.5px solid map-get($map: $colors, $key: lDark);
+                                                    width: 100%;
+                                                    border-radius: 80%;
+                                                }
+                                                p {
+                                                    font-size: 11px;
+                                                    color: map-get($map: $colors, $key: lDark);
+                                                    .SenderName {
+                                                        color: black;
+                                                    }
+                                                }
+                                                .Date{
+                                                    margin-top: 10px;
+                                                }
+                                            }
+                                        }
+                                    } 
+                                    // Invisible Scrollbar for the list of notification
+                                    #ListOfNotif::-webkit-scrollbar {
+                                        width: 0px;
+                                    }
+                                    > div:nth-child(3) {
+                                        text-align: center;
+                                        border-top: 2px solid map-get($map: $colors, $key: lDark);
+                                        padding-top: 3px;
+                                        a {
+                                            font-size: 14px;
+                                            float: initial;
+                                            font-weight: bolder;
+                                            color: map-get($map: $colors, $key: accent);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        ul {
+                            list-style: none;
+
+                        }
+                        #menu {
+                            border-left: 3px solid white;
+                            padding-left: 10px;
+                            height: 32px;
+  
+                            li {
+                                height: 100%;
+                                position: relative;
+                                #UserName,img {
+                                    float: left;
+                                }
+                                #UserName {
+                                    color: map-get($map: $colors, $key: Dark);
+                                    display: block;    
+                                    transform: translateY(8px);                            
+                                } 
+                                img:nth-child(2) {
+                                    height: 32px;
+                                    border-radius: 80%;
+                                    border: 3px solid map-get($map: $colors, $key: lDark);
+                                    margin: 0 5px 0 10px;
+                                } 
+                                img:nth-child(3) {
+                                    width: 7.5px;
+                                    display: block;
+                                    transform: translateY(7px);
+                                }
+                                
+                                #menuDropDown{
+                                    display: none;
+                                    position: absolute;
+                                    top: 150%;
+                                    width: 100px;
+                                    right: 0;
+                                    border-radius: 7px;
+                                    background-color: #EFEBEB;
+                                    padding: .5em 1em 0;
+                                    li {
+                                        a {
+                                            color: map-get($map: $colors, $key: Dark);
+                                            margin-bottom: 5px;
+                                        }
+                                        a:hover{
+                                            color: map-get($map: $colors, $key: accent);
+                                        }
+                                    }                                 
+                                }
+                            }   
+                        }
+                    }
+                }  
+            }
+        }
+    }
+}
 
 
 
@@ -122,10 +435,9 @@
                         color: map-get($map: $colors, $key: lDark);
                         position: relative;
                         top: 55%;
-                        transform: translateY(-50%);
-                        font-size: 15px;
+                        transform: translateY(-45%);
+                        font-size: 18px;
                         padding: 0 5px ;
-                        margin: 0; 
                         
                     }
     
@@ -198,7 +510,7 @@
                     
                 }
             }
-            #Confirm-Input {
+            #Confirm-Input{
                 width: 60%;
             }
             #finish {
@@ -219,10 +531,10 @@
 }
 
 
-#error:hover #error-close {
+#error:hover #error-close{
     right: 0;
 }
-#error {
+#error{
     background-color: #ef9590cf;
     padding: .5em;
     margin-top: 20px;
@@ -231,15 +543,18 @@
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    > img {
+    > img{
         width: 100%;
     }
-    > p {
+   
+    > p{
         color: #565555;
         margin: 5px 0 0 10px;
         text-align: justify;
     }
-    #error-close {
+    
+    
+    #error-close{
         position: absolute;
         background-color: rgba(255, 255, 255, 0.63);
         right: -50px;
