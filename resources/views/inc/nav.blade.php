@@ -104,7 +104,7 @@
                         <ul id="menu">
                             <li>
                                 <a href="#">
-                                    <span id="UserName">{{ Auth::user()->first_name }} </span>
+                                    <span id="UserName">{{ Auth::user()-> username }} </span>
                                     <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
                                     <img src="image/png/menuMore.png" alt="">
                                 </a>

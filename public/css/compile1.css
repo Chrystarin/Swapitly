@@ -8611,7 +8611,11 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-holder #Notification-DropDown #ListOfNotif::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
+}
+
+header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-holder #Notification-DropDown #ListOfNotif::-scrollbar {
+  width: 5px;
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #Img-But #Notification-holder #Notification-DropDown > div:nth-child(3) {
@@ -8650,8 +8654,8 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li img {
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #UserName {
   color: #6A6868;
   display: block;
-  -webkit-transform: translateY(8px);
-          transform: translateY(8px);
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li img:nth-child(2) {
