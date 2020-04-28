@@ -14,10 +14,10 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Styles -->
-    <link href="css/compile1.css" rel="stylesheet">
+    <link href="{{asset('css/compile1.css')}}" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/try2.js"></script>
+    <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
+	<script src="{{asset('js/try2.js')}}"></script>
     
 </head>
 <body>

@@ -97,7 +97,7 @@ class ProductsController extends Controller
             }
         }
 
-        return redirect('/products/user')->with('success', 'Product posted');
+        return redirect('/products')->with('success', 'Product posted');
     }
 
     /**

@@ -36,7 +36,14 @@
                                 <tr>
                                     <a href="/products/{{$item->id}}"  class="btn btn-default">
                                         <div class="card" style="width: 18rem;">
-                                            <img class="img-responsive" src="/storage/item_images/{{$item->media_file}}" alt="Image">
+                                            {{-- <img class="img-responsive" src="/storage/item_images/{{$item->media_file}}" alt="Image"> --}}
+                                            @if (count($item->productFiles) > 0)
+                                                @foreach ($item->productFiles as $file)
+                                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                                        <img class="img-responsive" src="/storage/item_images/{{$file->media_file}}" alt="Image">
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                             <div class="card-body">
                                             <h5 class="card-title">{{$item->item_name}}</h5>
                                             </div>

@@ -40,7 +40,7 @@
                 <!--Registered User-->
                 @else
                     <div id="Registered">
-                        <a href="#">Trade now</a>
+                        <a href="/products/create">Trade now</a>
                         
                         <div id="Img-But">
                             <a href="#" id="Heart"><img src="/storage/images/png/Heart.png" alt=""></a>

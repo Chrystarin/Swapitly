@@ -38,6 +38,7 @@ Route::resource('profile', 'ProfilesController');
 Route::resource('ratings', 'RatingsController');
 Route::resource('products', 'ProductsController');
 
+
 Route::any('/search',function(){
     $search = Input::get('search');
 
