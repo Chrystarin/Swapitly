@@ -32741,7 +32741,6 @@ $(document).ready(function () {
         $("#Module-Registration").fadeIn();
     });
     // End of animations
-    prompt();
 });
 
 /***/ }),
