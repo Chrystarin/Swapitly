@@ -17,7 +17,7 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
-                    <script src="js/Plugins/Swiper/swiper.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.8/js/swiper.min.js"></script>
                     <script src="js/Plugins/Swiper/SwiperScript.js"></script>
                 </div>
             </div>

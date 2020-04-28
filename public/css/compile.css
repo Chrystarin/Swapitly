@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);* {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.8/css/swiper.min.css);* {
   margin: 0;
   padding: 0;
 }
@@ -63,6 +63,7 @@ html body {
 .swiper-container {
   width: 450px;
   height: 100%;
+  z-index: 0 !important;
 }
 
 .swiper-slide {
@@ -93,6 +94,7 @@ html body {
   position: fixed;
   display: none;
   top: 0;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1112,7 +1114,7 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #menuDropDown 
   padding: 1em;
 }
 
-#ProductPreview_Holder > div h1 {
+#ProductPreview_Holder > div h3 {
   color: #6A6868;
   margin-bottom: 10px;
 }
