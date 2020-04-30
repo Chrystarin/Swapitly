@@ -5,8 +5,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require('./wew');
+// require('./bootstrap');
+
+
+require('./01-plugins/Plugins_dir');
+require('./02-base/Base_dir');
+require('./03-module/Module_dir');
+require('./04-Animation/Animation_dir');
 
 window.Vue = require('vue');
 

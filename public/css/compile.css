@@ -158,6 +158,11 @@ html body {
 }
 
 #Form-Registration input {
+  border: none;
+  outline: none;
+}
+
+#Form-Registration .input {
   width: 98%;
   height: 25px;
   border-radius: 5px;
@@ -708,6 +713,7 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #menuDropDown 
   border-radius: 7px;
   background-color: #EFEBEB;
   padding: .5em 1em 0;
+  width: 76px;
 }
 
 header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #menuDropDown li a {

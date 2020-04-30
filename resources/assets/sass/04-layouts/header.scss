@@ -261,6 +261,7 @@ header {
                                     border-radius: 7px;
                                     background-color: #EFEBEB;
                                     padding: .5em 1em 0;
+                                    width: 76px;
                                     li {
                                         a {
                                             color: map-get($map: $colors, $key: Dark);

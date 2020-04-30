@@ -8,7 +8,7 @@
             <h2>Create an Account</h2>
             <p>It's quick and easy</p>
             <div id="error">
-                <img  src="/storage/public/images/png/Error.png" alt="">
+                <img  src="/storage/images/png/Error.png" alt="">
                 <p id="error-message">You didn't fill the input box</p>
                 <div id="error-close">
                     <div>
@@ -59,16 +59,16 @@
                 <div id="FormPart2">
                     <div id="Email-FormPart2-Registration">
                         <h6 class="Desc">Email :</h6>
-                        <input id="Email-Input" type="email" class="Validation" name="email" value="{{ old('email') }}" >
+                        <input id="Email-Input" type="email" class="Validation input" name="email" value="{{ old('email') }}" >
                     </div>
                     <div id="Username-FormPart2-Registration">
                         <h6 class="Desc">Username (5 - 8 Characters) :</h6>
-                        <input id="Username-Input" type="text" class="Validation" name="username" value="{{ old('username') }}">
+                        <input id="Username-Input" type="text" class="Validation input" name="username" value="{{ old('username') }}">
                     </div>
 
                     <div id="Password-FormPart2-Registration">
                         <h6 class="Desc">Password :</h6>
-                        <div class="Validation">
+                        <div class="Validation input">
                             <input id="Password-Input" type="password" name="password">
                             <div id="Password_eye">
                                 <img data-status="false" src="image/png/Eye.png">
@@ -78,7 +78,7 @@
                     </div>
                     <div id="Confirm-FormPart2-Registration" >
                         <h6 class="Desc">Confirm Password :</h6>
-                        <input id="Confirm-Input" type="password" class="Validation" name="password_confirmation">
+                        <input id="Confirm-Input" type="password" class="Validation input" name="password_confirmation">
                     </div>
                     <button type="submit" id="finish">Finish</button>
                 </div>
