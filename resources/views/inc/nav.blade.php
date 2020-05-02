@@ -2,8 +2,8 @@
     <div id="NavHolder">
         <a href="{{ url('/') }}"><img src="/storage/images/png/Logo Name.png" alt=""></a>
         <div id="NavSearch"> 
-            <form action="/search" method="POST" role="search">
-                {{ csrf_field() }}
+            <form action="/search" method="GET" role="search">
+                {{-- {{ csrf_field() }} --}}
                 <input type="text" name="search" id="search">
                 <button type="submit"><img src="/storage/images/png/Search.png" alt=""></button>
             </form>
@@ -40,7 +40,7 @@
                 <!--Registered User-->
                 @else
                     <div id="Registered">
-                        <a href="/products/create">Trade now</a>
+                        <a href="/item_registration">Trade now</a>
                         
                         <div id="Img-But">
                             <a href="#" id="Heart"><img src="/storage/images/png/Heart.png" alt=""></a>
@@ -111,7 +111,7 @@
                                 <ul id="menuDropDown">
                                     <li><a href="/profile/{{Auth::user()->id}}">Profile</a></li>
                                     <li><a href="#">My Account</a></li>
-                                    <li><a href="\products\user">My Trades</a></li>
+                                    <li><a href="\my_trades">My Trades</a></li>
                                     <li><a href="\settings">Settings</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"

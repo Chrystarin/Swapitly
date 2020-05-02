@@ -112,6 +112,12 @@ class ProductsController extends Controller
         return view('products.show')->with('prod', $prod);
     }
 
+    public function show_prod($item_name, $item_id){
+        // echo $id.' - '.$name;
+        $prod = Product::find($item_id);
+        return view('products.show')->with('prod', $prod);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

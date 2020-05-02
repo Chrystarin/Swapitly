@@ -34,7 +34,10 @@
                             <tbody>
                                 @foreach($items as $item)
                                 <tr>
-                                    <a href="/products/{{$item->id}}"  class="btn btn-default">
+                                    {{-- <a href="/p/{{$item->item_name}}"  class="btn btn-default"> --}}
+
+                                        <a href="{{route('products.show',['item_name'=>$item->item_name,'item_id'=>$item->id])}}"  class="btn btn-default">
+                                       
                                         <div class="card" style="width: 18rem;">
                                             {{-- <img class="img-responsive" src="/storage/item_images/{{$item->media_file}}" alt="Image"> --}}
                                             @if (count($item->productFiles) > 0)
