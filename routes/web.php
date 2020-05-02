@@ -25,7 +25,7 @@ Route::get('/help', 'PagesController@help');
 Route::get('/products', 'ProductsController@index');
 Route::get('/my_trades', 'ProductsController@user');
 
-Route::get('{item_name}.i.{item_id}','ProductsController@show_prod')->name('products.show');
+Route::get('{item_name}-{item_id}','ProductsController@show_prod')->name('products.show');
 Route::get('item_registration','ProductsController@create')->name('products.create');
 
 
