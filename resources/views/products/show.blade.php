@@ -4,7 +4,7 @@
 
 
     <div id="ProductPreview_Holder">
-        <form id="ProductPreview_Information" action="post">
+        <form id="ProductPreview_Information" method="GET" action="{{$prod->item_name}}-{{$prod->id}}/trade">
             <div id="ProductPreview_Information_Image">
                 <div id="ProductPreview_Information_Image_Holder">
                     <div class="swiper-container">
