@@ -6,6 +6,11 @@
             <div class="panel-heading">Request</div>
                 <div class="panel-body">
                     {{-- {!! Form::open(['action' => 'RequestController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!} --}}
+                    {{$prod->item_name}}
+
+                    {{$prod->quantity}}
+
+                    {{$prod->description}}
 
                     {!! Form::open() !!}
                     {{Form::text('item_name', '', ['class' => 'form-control', 'placeholder' => 'Item name'])}}

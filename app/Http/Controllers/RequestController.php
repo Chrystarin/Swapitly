@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\User;
+use App\ProductFile;
 
 class RequestController extends Controller
 {
@@ -21,9 +24,10 @@ class RequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($name, $id)
     {
-        return view('pages.request');
+        $prod = Product::find($id);
+        return view('pages.request')->with('prod', $prod);
     }
 
     /**
