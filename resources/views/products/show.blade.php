@@ -12,7 +12,7 @@
                         <div class="swiper-slide">
                             @if (count($prod->productFiles) > 0)
                                 @foreach ($prod->productFiles as $file)
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                    <div >
                                         <img class="img-responsive" src="/storage/item_images/{{$file->media_file}}" alt="Image">
                                     </div>
                                 @endforeach
@@ -28,8 +28,22 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
-                    <script src="js/Plugins/Swiper/swiper.min.js"></script>
-                    <script src="js/Plugins/Swiper/SwiperScript.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.8/js/swiper.min.js"></script>
+                    <script>
+                        // Init Swiper
+                        var swiper = new Swiper('#ProductPreview_Information_Image_Holder .swiper-container', {
+                            pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                            },
+                            navigation: {
+                            nextEl: '#ProductPreview_Information_Image_Holder .swiper-button-next',
+                            prevEl: '#ProductPreview_Information_Image_Holder .swiper-button-prev',
+                            },
+                            // Enable debugger
+                            debugger: true,
+                        });
+                    </script>
                 </div>
             </div>
             <div id="ProductPreview_Information_Description">
@@ -199,8 +213,81 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequuntur corporis libero et dolorum, dolorem dolores fugit iste similique amet! Et velit a nihil nesciunt, ducimus provident consequatur reiciendis repellat quasi, minus, veniam delectus explicabo voluptatem illo nisi enim voluptas vel excepturi repellendus alias! Neque vitae error veritatis repellat incidunt.</p>
         </div>
     </div>
-    <div>
-        qeq
+
+    <div id="Items_SuggestionandSimilar_Holder">
+        <hr>
+        <div id="Items_SuggestionandSimilar_Similar">
+            <h3>SimilarItem</h3>
+            <div class="Itemcarousel_holder">
+                <div class="swiper-container">
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" data-history="1">Slide 1</div>
+                      <div class="swiper-slide" data-history="Slide 2">Slide 2</div>
+                      <div class="swiper-slide" data-history="3">Slide 3</div>
+                      <div class="swiper-slide" data-history="Slide 4">Slide 4</div>
+                      <div class="swiper-slide" data-history="5">Slide 5</div>
+                      <div class="swiper-slide" data-history="Slide 6">Slide 6</div>
+                      <div class="swiper-slide" data-history="7">Slide 7</div>
+                      <div class="swiper-slide" data-history="Slide 8">Slide 8</div>
+                      <div class="swiper-slide" data-history="9">Slide 9</div>
+                      <div class="swiper-slide" data-history="Slide 10">Slide 10</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                <script>
+                    var swiper = new Swiper('.Itemcarousel_holder .swiper-container', {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        pagination: {
+                            el: '.Itemcarousel_holder .swiper-pagination',
+                            clickable: true,
+                        },navigation: {
+                            nextEl: '.Itemcarousel_holder .swiper-button-next',
+                            prevEl: '.Itemcarousel_holder .swiper-button-prev',
+                        },
+                    });
+                </script> 
+            </div>
+        </div>
+        <div id="Items_SuggestionandSimilar_Recommend">
+            <h3>Recommend Items</h3>
+            <div class="Itemcarousel_holder">
+                <div class="swiper-container">
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" data-history="1">Slide 1</div>
+                      <div class="swiper-slide" data-history="Slide 2">Slide 2</div>
+                      <div class="swiper-slide" data-history="3">Slide 3</div>
+                      <div class="swiper-slide" data-history="Slide 4">Slide 4</div>
+                      <div class="swiper-slide" data-history="5">Slide 5</div>
+                      <div class="swiper-slide" data-history="Slide 6">Slide 6</div>
+                      <div class="swiper-slide" data-history="7">Slide 7</div>
+                      <div class="swiper-slide" data-history="Slide 8">Slide 8</div>
+                      <div class="swiper-slide" data-history="9">Slide 9</div>
+                      <div class="swiper-slide" data-history="Slide 10">Slide 10</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                <script>
+                    var swiper = new Swiper('#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-container', {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        pagination: {
+                            el: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-pagination',
+                            clickable: true,
+                        },navigation: {
+                            nextEl: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-button-next',
+                            prevEl: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-button-prev',
+                        },
+                    });
+                </script> 
+            </div>
+        </div>
     </div>	
 @endsection
 

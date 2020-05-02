@@ -330,3 +330,22 @@
         }  
     }
 }
+#Items_SuggestionandSimilar_Holder{
+    margin-top: 40px;
+    hr {
+        margin: 40px 0 30px;
+        border-radius: 9px;
+        opacity: .5;
+        border: 2px solid map-get($map: $colors, $key: lDark);
+    }
+    #Items_SuggestionandSimilar_Similar ,#Items_SuggestionandSimilar_Recommend {
+        width: 100%;
+        h3 {
+            font-size: 1.8em;
+            color: map-get($map: $colors, $key: Dark);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    }
+}
+

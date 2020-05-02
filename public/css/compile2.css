@@ -60,13 +60,13 @@ html body {
   background: none;
 }
 
-.swiper-container {
+#ProductPreview_Information_Image_Holder .swiper-container {
   width: 450px;
   height: 100%;
   z-index: 0 !important;
 }
 
-.swiper-slide {
+#ProductPreview_Information_Image_Holder .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -84,8 +84,38 @@ html body {
   align-items: center;
 }
 
-.swiper-slide img {
+#ProductPreview_Information_Image_Holder .swiper-slide img {
   width: 100%;
+}
+
+.Itemcarousel_holder {
+  width: 100%;
+  height: 300px;
+}
+
+.Itemcarousel_holder .swiper-container-horizontal > .swiper-scrollbar {
+  display: none;
+}
+
+.Itemcarousel_holder .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.Itemcarousel_holder .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #Module-Registration {
@@ -1123,5 +1153,29 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #menuDropDown 
 #ProductPreview_Holder > div h3 {
   color: #6A6868;
   margin-bottom: 10px;
+}
+
+#Items_SuggestionandSimilar_Holder {
+  margin-top: 40px;
+}
+
+#Items_SuggestionandSimilar_Holder hr {
+  margin: 40px 0 30px;
+  border-radius: 9px;
+  opacity: .5;
+  border: 2px solid #807F7F;
+}
+
+#Items_SuggestionandSimilar_Holder #Items_SuggestionandSimilar_Similar,
+#Items_SuggestionandSimilar_Holder #Items_SuggestionandSimilar_Recommend {
+  width: 100%;
+}
+
+#Items_SuggestionandSimilar_Holder #Items_SuggestionandSimilar_Similar h3,
+#Items_SuggestionandSimilar_Holder #Items_SuggestionandSimilar_Recommend h3 {
+  font-size: 1.8em;
+  color: #6A6868;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
