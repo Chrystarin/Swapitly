@@ -28,9 +28,10 @@ Route::get('/my_trades', 'ProductsController@user');
 Route::get('{item_name}-{item_id}','ProductsController@show_prod')->name('products.show');
 Route::get('item_registration','ProductsController@create')->name('products.create');
 
-
 Route::get('/ProductView','PagesController@ProductView');
 
+
+Route::get('{item_name}-{item_id}/trade','RequestController@create');
 
 Auth::routes();
 
