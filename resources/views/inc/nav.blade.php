@@ -49,7 +49,7 @@
                                     <img id="Notification" src="/storage/images/png/Notification.png" alt="">
                                     <ul id="Notification-DropDown">
                                         <div id="Notification-DropDown-header">
-                                            <p onclick="wew(this)">Notification</p>
+                                            <p>Notification</p>
                                             <span>5</span>
                                             <a href="#">All</a>
                                             <a href="#" >Request</a>

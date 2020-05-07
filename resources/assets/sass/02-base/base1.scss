@@ -16,6 +16,9 @@ $Maxwidth: 1400px;
 a {
     text-decoration: none;
 }
+a:active {
+    color: initial;
+}
 html    {
     body{
         width: 100%;
@@ -63,3 +66,17 @@ html    {
     color: none;
     background: none;
 }
+
+
+// Item slider Design
+.Item-slide {
+    -webkit-box-pack: unset !important;
+    -ms-flex-pack: unset !important;
+    justify-content: unset !important;
+    -webkit-box-align: unset !important;
+    -ms-flex-align: unset !important;
+    align-items: unset !important;
+}
+
+
+

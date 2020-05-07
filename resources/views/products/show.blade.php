@@ -224,23 +224,55 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide" data-history="1">Slide 1</div>
-                      <div class="swiper-slide" data-history="Slide 2">Slide 2</div>
-                      <div class="swiper-slide" data-history="3">Slide 3</div>
-                      <div class="swiper-slide" data-history="Slide 4">Slide 4</div>
-                      <div class="swiper-slide" data-history="5">Slide 5</div>
-                      <div class="swiper-slide" data-history="Slide 6">Slide 6</div>
-                      <div class="swiper-slide" data-history="7">Slide 7</div>
-                      <div class="swiper-slide" data-history="Slide 8">Slide 8</div>
-                      <div class="swiper-slide" data-history="9">Slide 9</div>
-                      <div class="swiper-slide" data-history="Slide 10">Slide 10</div>
+                        <div class="swiper-slide Item-slide" data-history="1">
+                            <div>
+                                <div>
+                                    <a href="#HOme">
+                                        <div class="Item-slide-UserInfo">
+                                            <div>
+                                                <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
+                                                <h2>iMcfury</h2>
+                                                <p>Harold James Castillo</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="Item-slide-ItemImage">
+                                            <img src="/storage/item_images/{{$file->media_file}}" alt="x">
+                                        </div>
+                                        <div class="Item-slide-Description">qwewq</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide Item-slide" data-history="2">
+                            <div>
+                                <div>
+                                    <a href="#HOme">
+                                        <div class="Item-slide-UserInfo">
+                                            <div>
+                                                <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
+                                                <h2>iMcfury</h2>
+                                                <p>Dianne Chrystalin Brandez</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="Item-slide-ItemImage">
+                                            <img src="/storage/item_images/{{$file->media_file}}" alt="x">
+                                        </div>
+                                        <div class="Item-slide-Description">qwewq</div>
+                                    </a>
+                                </div>
+                            </div>                   
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
                 <script>
                     var swiper = new Swiper('.Itemcarousel_holder .swiper-container', {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
+                        slidesPerView: 5,
+                        spaceBetween: 5,
                         pagination: {
                             el: '.Itemcarousel_holder .swiper-pagination',
                             clickable: true,
@@ -275,7 +307,7 @@
                   </div>
                 <script>
                     var swiper = new Swiper('#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-container', {
-                        slidesPerView: 3,
+                        slidesPerView: 5,
                         spaceBetween: 30,
                         pagination: {
                             el: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-pagination',
