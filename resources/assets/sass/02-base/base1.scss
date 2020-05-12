@@ -58,12 +58,10 @@ html    {
 }
 
 .CopyDisable::selection {
-    color: none;
     background: none;
 }
 /* For Mozilla Firefox */
 .CopyDisable::-moz-selection {
-    color: none;
     background: none;
 }
 

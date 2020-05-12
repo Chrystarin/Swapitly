@@ -33,61 +33,6 @@
   }
 }
 
-.Item-slide{
-  a {
-    color: map-get($map: $colors, $key: lDark) !important;
-  }
-  > div {
-    width: 100%;
-    height: 100%;
-    
-    > div {
-      height: 100%;
-      width: 100%; 
-      
-      .Item-slide-UserInfo{
-        height: 15%;
-        background-color: #353535;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        padding: 5px 0 0 5px;
-        div {
-          height: 90%;
-          img{
-            height: 100%;
-            box-sizing: border-box;
-            border-radius: 80%;
-            border: 3px solid map-get($map: $colors, $key: lDark);
-            float: left;
-            margin-right: 5px;
-          }
-          h2 {
-            color: darken($color: map-get($map: $colors, $key: accent), $amount: 10%);
-            padding-top: 4px;
-            font-size: .9em;
-          }
-          p {
-            color: white;
-            font-size: .5em;
-            line-height: 15px;
-            letter-spacing: -.9px;
-          }
-        }
-      }
-      .Item-slide-ItemImage{
-        height: 60%;
-        overflow: hidden;
-        margin: 2% 0;
-        img {
-          width: 100%;
-        }
-      }
-      .Item-slide-Description {
-        height: 21%;
-      }
-    }
-  }
-}
 
 
 // @media (max-width: 760px) {

@@ -89,7 +89,7 @@
                 <p id="Product_DatePost">Date: <span>20/30/12</span></p>
             </div>
             <div id="ProductPreview_Information_ModeOfTrading">
-                <h3>Mode of Trading</h3>					
+                <h3 class="CopyDisable">Mode of Trading</h3>					
                 <div id="Modeofchoice">
                     <label>
                         <input type="checkbox">
@@ -172,7 +172,7 @@
                     </div>
                     <div id="User_Profile_UserAchivement">
                         <div id="User_Profile_UserAchivement_Verified">
-                            <img src="/storage/images/png/ProdView_Verified.png" alt="V">
+                            <img src="/storage/images/png/Verified.png" alt="V">
                         </div>
                     </div>
                     <div id="User_Profile_UserContact">
@@ -220,59 +220,49 @@
             <h3>SimilarItem</h3>
             <div class="Itemcarousel_holder">
                 <div class="swiper-container">
-                    <div class="swiper-scrollbar"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide Item-slide" data-history="1">
                             <div>
                                 <div>
-                                    <a href="#HOme">
+                                    {{-- This a would be link to the page for the trader --}}
+                                    <a href="#" title="Harold James H. Castillo">
                                         <div class="Item-slide-UserInfo">
                                             <div>
                                                 <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
                                                 <h2>iMcfury</h2>
-                                                <p>Harold James Castillo</p>
+                                                <p>Harold James H. Castillo</p>
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#">
+                                    {{-- This a would be link to the page for the trader's product --}}
+                                    <a href="#" title="Realme phone">
                                         <div class="Item-slide-ItemImage">
+                                            <img src="/storage/images/png/Verified.png" alt="x">
+
                                             <img src="/storage/item_images/{{$file->media_file}}" alt="x">
                                         </div>
-                                        <div class="Item-slide-Description">qwewq</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide Item-slide" data-history="2">
-                            <div>
-                                <div>
-                                    <a href="#HOme">
-                                        <div class="Item-slide-UserInfo">
-                                            <div>
-                                                <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
-                                                <h2>iMcfury</h2>
-                                                <p>Dianne Chrystalin Brandez</p>
+                                        <div class="Item-slide-Description">
+                                            <p class="Item-slide-ItemName">Realme phone</p>
+                                            <p class="Item-slide-ItemLocation">San Mateo</p>
+                                            <div class="Item-slide-Desired">
+                                                {{-- This will be the Desired item for the trader. --}}
+                                                {{-- The first p would be the searched / most searched tag and the second would be the next most search tag that exist on the trader's desired item--}}
+                                                <p>Phone</p>
+                                                <p>Desktop</p>
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#">
-                                        <div class="Item-slide-ItemImage">
-                                            <img src="/storage/item_images/{{$file->media_file}}" alt="x">
-                                        </div>
-                                        <div class="Item-slide-Description">qwewq</div>
-                                    </a>
                                 </div>
-                            </div>                   
+                            </div>  
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                 <script>
                     var swiper = new Swiper('.Itemcarousel_holder .swiper-container', {
                         slidesPerView: 5,
-                        spaceBetween: 5,
+                        spaceBetween: 7,
                         pagination: {
                             el: '.Itemcarousel_holder .swiper-pagination',
                             clickable: true,
@@ -288,33 +278,55 @@
             <h3>Recommend Items</h3>
             <div class="Itemcarousel_holder">
                 <div class="swiper-container">
-                    <div class="swiper-scrollbar"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide" data-history="1">Slide 1</div>
-                      <div class="swiper-slide" data-history="Slide 2">Slide 2</div>
-                      <div class="swiper-slide" data-history="3">Slide 3</div>
-                      <div class="swiper-slide" data-history="Slide 4">Slide 4</div>
-                      <div class="swiper-slide" data-history="5">Slide 5</div>
-                      <div class="swiper-slide" data-history="Slide 6">Slide 6</div>
-                      <div class="swiper-slide" data-history="7">Slide 7</div>
-                      <div class="swiper-slide" data-history="Slide 8">Slide 8</div>
-                      <div class="swiper-slide" data-history="9">Slide 9</div>
-                      <div class="swiper-slide" data-history="Slide 10">Slide 10</div>
+                        <div class="swiper-slide Item-slide" data-history="1">
+                            <div>
+                                <div>
+                                    {{-- This a would be link to the page for the trader --}}
+                                    <a href="#" title="Harold James H. Castillo">
+                                        <div class="Item-slide-UserInfo">
+                                            <div>
+                                                <img src="/storage/profile_images/{{Auth::user()->profile_image}}" alt="">
+                                                <h2>iMcfury</h2>
+                                                <p>Harold James H. Castillo</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {{-- This a would be link to the page for the trader's product --}}
+                                    <a href="#" title="Realme phone">
+                                        <div class="Item-slide-ItemImage">
+                                            <img src="/storage/images/png/Verified.png" alt="x">
+
+                                            <img src="/storage/item_images/{{$file->media_file}}" alt="x">
+                                        </div>
+                                        <div class="Item-slide-Description">
+                                            <p class="Item-slide-ItemName">Realme phone</p>
+                                            <p class="Item-slide-ItemLocation">San Mateo</p>
+                                            <div class="Item-slide-Desired">
+                                                {{-- This will be the Desired item for the trader. --}}
+                                                {{-- The first p would be the searched / most searched tag and the second would be the next most search tag that exist on the trader's desired item--}}
+                                                <p>Phone</p>
+                                                <p>Desktop</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                 <script>
-                    var swiper = new Swiper('#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-container', {
+                    var swiper = new Swiper('.Itemcarousel_holder .swiper-container', {
                         slidesPerView: 5,
-                        spaceBetween: 30,
+                        spaceBetween: 7,
                         pagination: {
-                            el: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-pagination',
+                            el: '.Itemcarousel_holder .swiper-pagination',
                             clickable: true,
                         },navigation: {
-                            nextEl: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-button-next',
-                            prevEl: '#Items_SuggestionandSimilar_Recommend .Itemcarousel_holder .swiper-button-prev',
+                            nextEl: '.Itemcarousel_holder .swiper-button-next',
+                            prevEl: '.Itemcarousel_holder .swiper-button-prev',
                         },
                     });
                 </script> 

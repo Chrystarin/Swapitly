@@ -17,6 +17,7 @@
     <link href="{{asset('css/compiler7.css')}}" rel="stylesheet">
 
     <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.8/js/swiper.min.js"></script>
     <script src="{{asset('js/app.js')}}"></script>
     
 </head>
@@ -27,7 +28,7 @@
     
     <div id="Content_Holder">
         @yield('content')
-    </div>
+    </div> 
 
 	@include('auth.register')
     
