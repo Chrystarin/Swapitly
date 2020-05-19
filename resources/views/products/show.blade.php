@@ -205,7 +205,7 @@
             </div>
         </div>
         <div id="Productdescription_Holder">
-            <h3>Product Description: </h3>
+            <h3>Item Description: </h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequuntur corporis libero et dolorum, dolorem dolores fugit iste similique amet! Et velit a nihil nesciunt, ducimus provident consequatur reiciendis repellat quasi, minus, veniam delectus explicabo voluptatem illo nisi enim voluptas vel excepturi repellendus alias! Neque vitae error veritatis repellat incidunt.</p>
         </div>
         <div id="Productdescription_Holder">

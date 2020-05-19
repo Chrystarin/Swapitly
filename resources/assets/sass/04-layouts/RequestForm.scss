@@ -1,0 +1,204 @@
+#RequestForm-holder::before,#RequestForm-holder::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    left: 0;
+}
+#RequestForm-holder::before {
+    top: 0;
+    background-color: map-get($map: $colors, $key: primary);
+}
+#RequestForm-holder::after {
+    bottom: 0;
+    background-color: map-get($map: $colors, $key: primary);
+}
+#RequestForm-holder {
+    color: map-get($map: $colors, $key: Dark);
+    width: 20px;
+    height: 3000px;
+    position: relative;
+    padding: .5em 1em;
+    box-sizing: border-box;
+    > h1 {
+        padding: 15px 0;
+    } 
+    > div {
+        margin-top: 10px;
+        background-color: rgb(250, 250, 250);
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    #RequestForm-ReciepientInformation-holder{
+        width: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-sizing: border-box;
+        padding: .5em 1em;
+
+        #RequestForm-ReciepientInformation {
+            display: grid;
+            grid-template-columns: .25fr 1fr .2fr;
+            #RequestForm-RecipientImage-Holder {
+                #RequestForm-ReciepientPicture-Recipient {
+                    width: 90%;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            
+            #RequestForm-RecipientBasicInformation-Holder {
+                position: relative;
+                > div {
+                    position: absolute;
+                    top: 50%;
+                    left: 20px;
+                    transform: translateY(-50%);
+                    #RequestForm-Location-Recipient,#RequestForm-Rating-Recipient-holder {
+                        margin-top: 5px;
+                    } 
+                    #RequestForm-Name-Recipient {
+                        font-size: 1.7em;
+                    }
+                    #RequestForm-Rating-Recipient-holder {
+                        img {
+        
+                        }
+                        #RequestForm-Rating-Recipient {
+                            font-size: 1.3em;
+                            color: map-get($map: $colors, $key: primary);
+                        }
+                    }
+                    #RequestForm-Location-Recipient {
+                        color: map-get($map: $colors, $key: accent);
+                        font-size: 1.3em; 
+                        transform: translateX(-5px);
+                        display: inline-block;
+                    }
+                    #RequestForm-Location-Recipient::before {
+                        content: "";
+                        display: inline-block;
+                        height: .8em;
+                        width: 1em;
+                        background: url("/storage/images/png/Location.png");
+                        background-size: cover;
+                    }
+                }
+            }
+            #RequestForm-RecipientChat-Holder {
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50%;
+                }
+            }
+            #RequestForm-RecipientUsername-Holder {
+                padding-top: 10px;
+                h2 {
+                    text-align: center;
+                    color: map-get($map: $colors, $key: accent);
+                }
+            }
+            #RequestForm-RecipientAchievement-Holder {
+                padding: 10px 0 0 20px;
+                img {
+                    height: 1.5em;
+                }
+            }
+        }
+
+
+        #RequestForm-ReciepientItem-Remarks-holder {
+            position: relative;
+            h3 {
+                font-size: 1.3em;
+                font-weight: lighter;
+                padding-top: 9px;
+                margin-left: 40px;
+                color: map-get($map: $colors, $key: lDark);
+            }
+            #RequestForm-ReciepientItem-Remarks {
+                font-size: 1em;
+                width: 70%;
+                margin: 7px auto 0;
+                text-align: justify;
+            }
+        }
+
+        #RequestForm-ReciepientItem-Remarks-holder::after {
+            content: "";
+            display: block;
+            height: 95%;
+            position: absolute;
+            left: -2.5px;
+            top: 50%;
+            border-radius: 20px;
+            width: 5px;
+            background-color: lighten($color: map-get($map: $colors, $key: lDark), $amount: 10%);
+            transform: translateY(-50%);
+        }
+    }
+
+    #RequestForm-ReciepientItemInformation-holder {
+        padding: .5em 1em;
+        #RequestForm-ItemPreview {
+            display: grid;
+            grid-template-columns: 1.3fr 3fr;
+            grid-gap: 30px;
+            #RequestForm-ItemPreview-ItemPreview-Image {
+                img {
+                    width: 100%;
+                }
+            }
+            #RequestForm-ItemPreview-ItemPreview-Content {
+                h2 {
+                    padding-top: 10px;
+                    font-size: 1.7em;
+                    letter-spacing: .1em;
+                    margin-bottom: 8px;
+                }
+                p {
+                    padding-bottom: 10px;
+                    font-weight: lighter;
+                    font-size: 1.3em;
+                    color: map-get($map: $colors, $key: lDark);
+                }
+                p:nth-child(5){
+                    padding-bottom: 0;
+                }
+                p:nth-child(6){
+                    width: 90%;
+                    margin-left: 3%;
+                    text-align: justify;
+                }
+                span {
+                    color: map-get($map: $colors, $key: Dark);
+                }
+
+            }
+        }
+
+        .RequestFormInfo-holder{
+            border: 1px solid map-get($map: $colors, $key: Dark);
+            background-color: white;
+            margin: 16px 0;
+            box-sizing: border-box;
+            padding: .5em 1em;
+            border-radius: 8px;
+            h3 {
+                color: map-get($map: $colors, $key: lDark);
+            }
+        }
+        #RequestForm-ItemDesiredItem-holder {
+            > div{
+                margin-top: 5px;
+            }
+        }
+    }
+}

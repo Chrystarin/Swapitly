@@ -32,4 +32,7 @@ class PagesController extends Controller
     public function ProductView(){
         return view('products.ProductView');
     }
+    public function RequestForm(){
+        return view('pages.RequestForm');
+    }
 }

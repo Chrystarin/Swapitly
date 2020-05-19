@@ -21,7 +21,9 @@ Route::get('/favorites', 'PagesController@favorites');
 Route::get('/mytrades', 'PagesController@mytrades');
 Route::get('/settings', 'PagesController@settings');
 Route::get('/help', 'PagesController@help');
-
+Route::get('/RequestForm', function(){
+    return view('pages.RequestForm');
+});
 Route::get('/products', 'ProductsController@index');
 Route::get('/my_trades', 'ProductsController@user');
 

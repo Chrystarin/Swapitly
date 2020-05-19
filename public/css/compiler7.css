@@ -70,6 +70,25 @@ html body {
   align-items: unset !important;
 }
 
+.UserPicture {
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid #807F7F;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+i {
+  letter-spacing: .08em;
+}
+
 #ProductPreview_Information_Image_Holder .swiper-container {
   width: 450px;
   height: 100%;
@@ -1284,5 +1303,235 @@ header nav #NavHolder > #NavStat #NavStat_P2 #Registered #menu li #menuDropDown 
           box-sizing: border-box;
   font-size: .5em;
   letter-spacing: 1px;
+}
+
+#RequestForm-holder::before,
+#RequestForm-holder::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  z-index: -1;
+  left: 0;
+}
+
+#RequestForm-holder::before {
+  top: 0;
+  background-color: #F9DC67;
+}
+
+#RequestForm-holder::after {
+  bottom: 0;
+  background-color: #F9DC67;
+}
+
+#RequestForm-holder {
+  color: #6A6868;
+  width: 20px;
+  height: 3000px;
+  position: relative;
+  padding: .5em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#RequestForm-holder > h1 {
+  padding: 15px 0;
+}
+
+#RequestForm-holder > div {
+  margin-top: 10px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder {
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .5em 1em;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation {
+  display: grid;
+  grid-template-columns: .25fr 1fr .2fr;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientImage-Holder #RequestForm-ReciepientPicture-Recipient {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder {
+  position: relative;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Location-Recipient,
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Rating-Recipient-holder {
+  margin-top: 5px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Name-Recipient {
+  font-size: 1.7em;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Rating-Recipient-holder #RequestForm-Rating-Recipient {
+  font-size: 1.3em;
+  color: #F9DC67;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Location-Recipient {
+  color: #35BADC;
+  font-size: 1.3em;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+  display: inline-block;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientBasicInformation-Holder > div #RequestForm-Location-Recipient::before {
+  content: "";
+  display: inline-block;
+  height: .8em;
+  width: 1em;
+  background: url("/storage/images/png/Location.png");
+  background-size: cover;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientChat-Holder {
+  position: relative;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientChat-Holder img {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50%;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientUsername-Holder {
+  padding-top: 10px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientUsername-Holder h2 {
+  text-align: center;
+  color: #35BADC;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientAchievement-Holder {
+  padding: 10px 0 0 20px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientInformation #RequestForm-RecipientAchievement-Holder img {
+  height: 1.5em;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientItem-Remarks-holder {
+  position: relative;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientItem-Remarks-holder h3 {
+  font-size: 1.3em;
+  font-weight: lighter;
+  padding-top: 9px;
+  margin-left: 40px;
+  color: #807F7F;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientItem-Remarks-holder #RequestForm-ReciepientItem-Remarks {
+  font-size: 1em;
+  width: 70%;
+  margin: 7px auto 0;
+  text-align: justify;
+}
+
+#RequestForm-holder #RequestForm-ReciepientInformation-holder #RequestForm-ReciepientItem-Remarks-holder::after {
+  content: "";
+  display: block;
+  height: 95%;
+  position: absolute;
+  left: -2.5px;
+  top: 50%;
+  border-radius: 20px;
+  width: 5px;
+  background-color: #999999;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder {
+  padding: .5em 1em;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview {
+  display: grid;
+  grid-template-columns: 1.3fr 3fr;
+  grid-gap: 30px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Image img {
+  width: 100%;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Content h2 {
+  padding-top: 10px;
+  font-size: 1.7em;
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Content p {
+  padding-bottom: 10px;
+  font-weight: lighter;
+  font-size: 1.3em;
+  color: #807F7F;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Content p:nth-child(5) {
+  padding-bottom: 0;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Content p:nth-child(6) {
+  width: 90%;
+  margin-left: 3%;
+  text-align: justify;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemPreview #RequestForm-ItemPreview-ItemPreview-Content span {
+  color: #6A6868;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder .RequestFormInfo-holder {
+  border: 1px solid #6A6868;
+  background-color: white;
+  margin: 16px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .5em 1em;
+  border-radius: 8px;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder .RequestFormInfo-holder h3 {
+  color: #807F7F;
+}
+
+#RequestForm-holder #RequestForm-ReciepientItemInformation-holder #RequestForm-ItemDesiredItem-holder > div {
+  margin-top: 5px;
 }
 
